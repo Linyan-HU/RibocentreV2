@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Twister</title>
+  <meta name="description" content="Rfam ID: RF03160 ">
+  <!--<link rel="stylesheet" href="http://localhost:4000/css/main.css>-->
+  <link rel="stylesheet" href="https://www.ribocentre.org/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/ribozyme/2022/04/19/twister.html">
+  <link rel="shortcut icon" type ="image/x-icon" href="https://www.ribocentre.org/images/favicon.ico">
+
+
+
+</head>
+
+
+  <body>
+
+    <!--div class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <style>
+        /* Modify the background color https://www.color-hex.com/color-palette/1011604 */
+        .navbar {
+            background-color: #0874c4;
+        }
+        .navbar .navbar-brand,
+        .navbar .navbar-text {
+            color: #eeeeee;
+        }
+
+		#now a{
+			color:#fff
+
+		}
+		#now a:hover{
+			font-size: 20px;
+		}
+  </style>
+
+  <div class="container-fluid">
+	<div class="navbar-header">
+	  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+		<span class="sr-only">Toggle navigation</span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+	  </button>
+	
+    <a class="navbar-brand" href="https://www.ribocentre.org/">
+
+		<img class="navbar-brand" src="https://www.ribocentre.org/images/Ribo_centre_logo.jpg" style='height:50px;margin-top:-14px;margin-bottom:0;padding:0;' alt="logo">
+		&nbsp;Ribocentre 
+	</a>
+	</div>
+	<div class="collapse navbar-collapse" id="navbar-collapse-1">
+	  <ul class="nav navbar-nav navbar-right">
+		<li id="now"><a href="https://www.ribocentre.org/">Home</a></li>
+		<li id="now"><a href="https://www.ribocentre.org/ribozyme">Ribozymes</a></li>
+		<li id="now"><a href="https://www.ribocentre.org/sequence">Sequences</a></li>
+		<li id="now"><a href="https://www.ribocentre.org/structure">Structures</a></li>
+		<li id="now"><a href="https://www.ribocentre.org/catalysis">Catalysis</a></li>
+		<li id="now"><a href="https://www.ribocentre.org/application">Applications</a></li>
+		<li id="now"><a href="https://www.ribocentre.org/publications">Publications</a></li>
+		<li id="now"><a href="https://www.ribocentre.org/Helps">Help</a></li>
+	  </ul>
+	</div>
+  </div>
+</div-->
+
+<style>
+  .full-width-image {
+	  width: 100%;
+	  height: 350px;
+	  overflow: hidden;
+	  border-radius: 0;
+	  margin-top: 0;
+	  margin-bottom: 0;
+	  position: relative;
+	  background: url(../../images/homepicture.jpg) no-repeat;
+	  background-size: cover; 
+	  background-position: center; 
+  }
+  
+  .full-width-image img {
+	  width: 100%;
+	  height: 100%;
+	  object-fit: cover;
+	  object-position: center
+  }
+  
+  .search-box {
+	  height: 100%;
+	  width: 70%;
+	  margin: 0 auto;
+	  display: flex;
+	  align-items: center
+  }
+  
+  .search {
+	  padding-top: 0px;
+	  padding-bottom: 0px; 
+	  padding-left: 20px; 
+	  padding-right: 20px;
+	  background: #fff;
+	  position: absolute;
+  }
+  
+  .search h2 {
+	  font-size: 20px
+  }
+  
+  .search .i {
+	  display: flex;
+	  align-items: center
+  }
+  
+  .search .i img {
+	  width: 70px;
+	  height: 50px;
+	  object-fit: contain
+  }
+  
+  .search .i h1 {
+	  font-size: 28px;
+	  font-weight: 700;
+	  margin-left: 10px
+  }
+  
+  .search .tip {
+	  font-size: 14px;
+	  margin-top: 10px
+  }
+  
+  .searchInput {
+	  margin-top: 10px;
+	  width: 450px;
+	  height: 32px;
+	  display: flex
+  }
+  
+  .searchInput input {
+	  flex: 1;
+	  height: 100%;
+	  line-height: 32px;
+	  border: 1px solid #868686;
+	  outline: 0;
+	  border-radius: 7px;
+	  padding: 0 10px
+  }
+  
+  .gsc-control {
+	width: 300px;
+  }
+  
+  .gsc-control div {
+	position: static;
+  }
+  
+  /* Slight reset to make the preview have ample padding. */
+  .gsc-control-cse {
+	padding: 1em;
+  }
+  
+  .gsc-control-cse,
+  .gsc-control-cse .gsc-table-result {
+	width: auto;
+	font-family: Arial, sans-serif;
+	font-size: 13px;
+  }
+  
+  .gsc-control-wrapper-cse {
+	width: 600px;
+  }
+  .gsc-search-button-v2, .gsc-search-button-v2:hover, .gsc-search-button-v2:focus {
+	  border-color: #158CBA;
+	  background-color: #158CBA;
+	  background-image: none;
+	  filter: none;
+  }
+  
+  .gsc-control-cse, .gsc-control-cse .gsc-table-result {
+	  width: auto;
+	  font-family: Arial, sans-serif;
+	  font-size: 1px;
+  }
+  .gsc-input {
+	  font-size: 16px;
+	  color: #000000;
+  }
+  .col-sm-4 {
+    padding-left: 0px;
+    padding-right: 26px;
+}
+input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus {
+    border-color: #ffffff;
+}
+h1, .h1, h2, .h2, h3, .h3 {
+    margin-top: 22px;
+    margin-bottom: 0px;
+}
+img {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    border-radius: 2%;
+}
+  </style>
+
+
+<div class="navbar-expand-lg navbar-dark" style='background-color: #333333; border-radius: 0; margin-bottom: 0; border: 0; height: 30px;' role="navigation">
+	<div class="container-fluid" style='height: 30px; max-width: 1000px;'>
+		<ul class="nav navbar-nav navbar-right" style='height: 30px;'>
+		  <li><a style='display: inline; padding: 15px 15px 5px 5px; line-height: 30px;' class="nav-link-0" href="https://www.gznl.org/">
+			  <img src="https://www.ribocentre.org/images/header/home.svg" style='height: 20px; width: auto; margin: 0;'>
+			  Home</a></li>
+		  <li><a style='display: inline; padding: 15px 15px 5px 5px; line-height: 30px;' class="nav-link-0" href="https://www.gznl.org/database/">
+			  <img src="https://www.ribocentre.org/images/header/database.svg" style='height: 20px; width: auto; margin: 0;'>
+			  Database</a></li>
+		  <li><a style='display: inline; padding: 15px 15px 5px 5px; line-height: 30px;' class="nav-link-0" href="https://www.gznl.org/research/">
+			  <img src="https://www.ribocentre.org/images/header/research.svg" style='height: 20px; width: auto; margin: 0;'>
+			  Research</a></li>
+		  <li><a style='display: inline; padding: 15px 15px 5px 5px; line-height: 30px;' class="nav-link-0" href="https://www.gznl.org/aboutus/">
+			  <img src="https://www.ribocentre.org/images/header/aboutus.svg" style='height: 20px; width: auto; margin: 0;'>
+			  About us</a></li>
+		  <li><a style='display: inline; padding: 15px 15px 5px 5px; line-height: 30px;' class="nav-link-0" href="https://gzlab.ac.cn/">
+			  GZNL-RDC
+			  <img src="https://www.ribocentre.org/images/header/gznl2.svg" style='height: 20px; width: auto; margin: 0;'>
+			  </a></li>
+		</ul>
+	</div>
+  </div>
+
+
+  <div class="full-width-image">
+    <div class="search-box">
+      <div class="search">
+      <h2>GZNL's Respiratory Data Centre, GZNL-RDC</h2>
+      <div class="i"><img src="https://www.ribocentre.org/images/ribocentre.svg">
+        <h1>Ribocentre</h1>
+      </div>
+      <p>A database of ribozymes</p>
+      <script async src="https://cse.google.com/cse.js?cx=2dcb771063bc36a13"></script>
+      
+        <div class="gcse-search"></div>
+      <p>Example:
+      <a href="https://www.ribocentre.org/search.html?q=rna#gsc.tab=0&gsc.q=rna&gsc.page=1"  target="_blank">RNA</a>&nbsp;&nbsp;
+      <a href="https://www.ribocentre.org/search.html?q=Ribo#gsc.tab=0&gsc.q=Ribo&gsc.page=1"  target="_blank">Ribo</a>&nbsp;&nbsp;
+      <a href="https://www.ribocentre.org/search.html?q=breaker#gsc.tab=0&gsc.q=breaker&gsc.page=1"  target="_blank">Breaker</a>&nbsp;&nbsp;
+      <a href="https://www.ribocentre.org/ribozyme">Ribozymes</a>&nbsp;&nbsp;
+      <a href="https://www.ribocentre.org/publications">Publications</a>&nbsp;&nbsp;
+      <a href="https://www.ribocentre.org/docs/VS-ribozyme.html" target="_blank"> VS with 3D structures</a>&nbsp;&nbsp;
+      <a href="https://www.ribocentre.org/Helps">Teams</a>&nbsp;&nbsp;
+      </p>
+      </div>
+    </div>
+    </div>
+
+
+    <div class="navbar navbar-expand-lg navbar-dark bg-primary" style='border-radius: 0; border: 0;' role="navigation">
+  
+      <div class="container-fluid" style='max-width: 75%;'>
+        <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        
+        <a class="navbar-brand" href="https://www.ribocentre.org">
+          
+          <img class="navbar-brand" src="https://www.ribocentre.org/images/ribocentre-logo.svg" style='height:50px;margin-top:-14px;margin-bottom:0;padding:2px 2px;border-radius: 0;' alt="logo">
+          <!--b style='font-size: 32px; color: #eeeeee;'>Ribocentre</b-->
+        </a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a class="nav-link-1" href="https://www.ribocentre.org/" style="font-size: 20px">Home</a></li>
+          <li><a class="nav-link-1" href="https://www.ribocentre.org/ribozyme" style="font-size: 20px">Ribozymes</a></li>
+          <li><a class="nav-link-1" href="https://www.ribocentre.org/sequence" style="font-size: 20px">Sequences</a></li>
+          <li><a class="nav-link-1" href="https://www.ribocentre.org/structure" style="font-size: 20px">Structures</a></li>
+          <li><a class="nav-link-1" href="https://www.ribocentre.org/catalysis" style="font-size: 20px">Catalysis</a></li>
+          <li><a class="nav-link-1" href="https://www.ribocentre.org/application" style="font-size: 20px">Applications</a></li>
+          <li><a class="nav-link-1" href="https://www.ribocentre.org/publications" style="font-size: 20px">Publications</a></li>
+          <li><a class="nav-link-1" href="https://www.ribocentre.org/Helps" style="font-size: 20px">Help</a></li>
+        </ul>
+        </div>
+      </div>
+      </div>
+
+
+
+
+
+    <div class="container-fluid">
+      <div class="row">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Twister</h1>
+    <p class="post-meta"><time datetime="2022-04-19T03:25:52+08:00" itemprop="datePublished">Apr 19, 2022</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Peng Xuemei, Deng Jie</span></span></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p><strong><a href="https://rfam.org/family/RF03160">Rfam ID: RF03160</a></strong> <br /></p>
+
+<h4 id="click-into-different-sections">click into different sections:</h4>
+
+<ul>
+  <li><a href="#timeline">Timeline</a></li>
+  <li><a href="#description">Description</a></li>
+  <li><a href="#structure">Structure and mechanism</a></li>
+  <li><a href="#references">References</a></li>
+</ul>
+
+<h2 id="timeline">Timeline</h2>
+
+<hr />
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title></title>
+
+</head>
+<style>
+   table {
+        border: 2px solid #f8f8ff;
+        border: 2px solid #767676;
+		    border: 2px solid #767676;
+		    border-radius: 5px;
+		    background-color: #fff;
+        }
+.timeline {
+  list-style: none;
+  padding: 10px 0 10px;
+  position: relative;
+}
+.timeline:before {
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  content: " ";
+  width: 3px;
+  background-color: #eeeeee;
+  left: 50%;
+  margin-left: -1.5px;
+}
+.timeline > li {
+  margin-bottom: 10px;
+  position: relative;
+}
+.timeline > li:before,
+.timeline > li:after {
+  content: " ";
+  display: table;
+}
+.timeline > li:after {
+  clear: both;
+}
+.timeline > li:before,
+.timeline > li:after {
+  content: " ";
+  display: table;
+}
+.timeline > li:after {
+  clear: both;
+}
+.timeline > li > .timeline-panel {
+  width: 46%;
+  float: left;
+  border: 1px solid #d4d4d4;
+  border-radius: 2px;
+  padding: 5px;
+  position: relative;
+  -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+}
+.timeline > li > .timeline-panel:before {
+  position: absolute;
+  top: 16px;
+  right: -12px;
+  display: inline-block;
+  border-top: 10px solid transparent;
+  border-left: 10px solid #ccc;
+  border-right: 0 solid #ccc;
+  border-bottom: 10px solid transparent;
+  content: " ";
+}
+.timeline > li > .timeline-panel:after {
+  position: absolute;
+  top: 16px;
+  right: -10px;
+  display: inline-block;
+  border-top: 10px solid transparent;
+  border-left: 10px solid #fff;
+  border-right: 0 solid #fff;
+  border-bottom: 10px solid transparent;
+  content: " ";
+}
+.timeline > li > .timeline-badge {
+  color: #fff;
+  width: 25px;
+  height: 25px;
+  line-height: 40px;
+  font-size: 1.4em;
+  text-align: center;
+  position: absolute;
+  top: 16px;
+  left: 48.5%;
+  margin-left: 0px;
+  background-color: #999999;
+  z-index: 100;
+  border-top-right-radius: 50%;
+  border-top-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+}
+.timeline > li.timeline-inverted > .timeline-panel {
+  float: right;
+}
+.timeline > li.timeline-inverted > .timeline-panel:before {
+  border-left-width: 0;
+  border-right-width: 15px;
+  left: -15px;
+  right: auto;
+}
+.timeline > li.timeline-inverted > .timeline-panel:after {
+  border-left-width: 0;
+  border-right-width: 14px;
+  left: -14px;
+  right: auto;
+}
+.timeline-badge.primary {
+  background-color: #2e6da4 !important;
+}
+.timeline-badge.success {
+  background-color: #3f903f !important;
+}
+.timeline-badge.warning {
+  background-color: #f0ad4e !important;
+}
+.timeline-badge.danger {
+  background-color: #d9534f !important;
+}
+.timeline-badge.info {
+  background-color: #5bc0de !important;
+}
+.timeline-title {
+  margin-top: 0;
+  color: inherit;
+}
+.timeline-body > p,
+.timeline-body > ul {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.timeline-body > p + p {
+  margin-top: 0px;
+}
+
+</style>
+<!--<div class="container" width: 1026px></div>-->
+    <ul class="timeline">
+        <li>
+          <div class="timeline-badge warning"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title"> <a href="https://www.ncbi.nlm.nih.gov/pubmed/24240507" target="_blank" style="font-size:25px;">2014</a> Discovery, Secondary structure<sup>[1]</sup></h4>
+            </div>
+          </div>
+        </li>
+        <li class="timeline-inverted">
+          <div class="timeline-badge primary"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title"><a href="https://www.ncbi.nlm.nih.gov/pubmed/25038788" target="_blank" style="font-size:25px;">2014</a> Crystal structure of P1-type<sup>[2]</sup></h4>
+            </div>
+            <div class="timeline-body">
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-badge warning"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title"><a href="https://www.ncbi.nlm.nih.gov/pubmed/25410397" target="_blank" style="font-size:25px;">2014</a> Crystal structure of P1-type <sup>[3]</sup></h4>
+            </div>
+          </div>
+        </li>
+        <li class="timeline-inverted">
+          <div class="timeline-badge primary"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title"><a href="https://www.ncbi.nlm.nih.gov/pubmed/25157168" target="_blank" style="font-size:25px;">2014</a> Crystal structure of P3-type <sup>[4]</sup></h4>
+            </div>
+          </div>
+        </li>
+         <li>
+          <div class="timeline-badge warning"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title"><a href="https://www.ncbi.nlm.nih.gov/pubmed/27670347" target="_blank" style="font-size:25px;">2016</a> Application:Twister ribozymes as highly versatile expression platforms for artificial riboswitches<sup>[7]</sup></h4>
+            </div>
+          </div>
+        </li>
+        <li class="timeline-inverted">
+          <div class="timeline-badge primary"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title"><a href="https://www.ncbi.nlm.nih.gov/pubmed/26859432" target="_blank" style="font-size:25px;">2016</a> Active State of the Twister Ribozyme in Solution Predicted from Molecular Simulation<sup>[9]</sup></h4>
+            </div>
+          </div>
+        </li>
+         <li>
+          <div class="timeline-badge warning"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title"><a href="https://www.ncbi.nlm.nih.gov/pubmed/27863022" target="_blank" style="font-size:25px;">2017</a> Chemical Mechanism<sup>[11]</sup></h4>
+            </div>
+          </div>
+        </li>
+        <li class="timeline-inverted">
+          <div class="timeline-badge primary"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title"><a href="https://www.ncbi.nlm.nih.gov/pubmed/28191925" target="_blank" style="font-size:25px;">2017</a> Mechanistic Debris Generated by Twister Ribozymes<sup>[12]</sup></h4>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-badge warning"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title"><a href="https://www.ncbi.nlm.nih.gov/pubmed/34551436" target="_blank" style="font-size:25px;">2021</a> The function of twister ribozyme variants in non-LTR retrotransposition<sup>[19]</sup></h4>
+            </div>
+          </div>
+        </li>
+    </ul>
+
+</html>
+
+<h2 id="description">Description</h2>
+
+<hr />
+
+<font size="4">The twister ribozyme is a catalytic RNA structure capable of self-cleavage. The nucleolytic activity of this ribozyme has been demonstrated both in vivo and in vitro and has one of the fastest catalytic rates of naturally occurring ribozymes with similar function. The twister ribozyme is considered to be a member of the small self-cleaving ribozyme family which includes the hammerhead, hairpin, hepatitis delta virus (HDV), Varkud satellite (VS), and GlmS ribozymes.</font>
+<p><br /></p>
+
+<h2 id="structure">Structure and mechanism</h2>
+
+<hr />
+
+<blockquote>
+  <p>2D representation</p>
+</blockquote>
+<p>Secondary structure of the twister ribozyme. The general acid and general base are shown in red and blue respectively.</p>
+<table><tr>
+<td>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+</head>
+<style>
+   body {
+    width: 100%;
+    height: 100vh;
+}
+   button {
+   margin-right: 0px;
+}
+   .main-container {
+    display: flex;
+    align-items: left;
+    justify-content: center;
+    height: 100%;
+}
+   .zoom-wrapper1 {
+    width: 450px;
+    height: 400px;
+    border: 1px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+</style>
+    <div class="main-container">
+        <div class="zoom-wrapper1">
+            <div class="zoom-area1">
+                <img src="https://www.ribocentre.org/images/twisterPic/twister2D.svg" alt="drawing" style="width:180px;height:180px" />
+            </div>
+        </div>
+    </div>
+    <script src="https://www.ribocentre.org/js/panzoom.js"></script>
+    <script type="text/javascript">
+      var zoomWraper1 = document.querySelector(".zoom-wrapper1");
+      var panzoom1 = Panzoom(document.querySelector(".zoom-area1"), {
+      maxScale: 6
+      });
+      zoomWraper1.addEventListener("wheel", panzoom1.zoomWithWheel);
+      panzoom1.zoom(300 / document.querySelector(".zoom-area1 img").height);
+      panzoom2.pan(0, 0);
+      </script>
+</td>
+<td>
+<link rel="stylesheet" type="text/css" href="https://www.ribocentre.org/css/fornac.css" media="screen" />
+
+<div id="custom_colors"></div>
+<form onsubmit="return handleCustomColorApply()" class="optionsform">
+  <textarea id="CustomColorText" name="hide" textarea="" style="display:none;">
+    1-5:#EACD1F 50-54:#EACD1F 8-12:#E6A8CA 41-44:#E6A8CA 20-23:#D24841 32-35:#D24841 13-14:#8FC31F 30-31:#8FC31F 25-28:#8FC31F 46-49:#8FC31F
+    7:#F10000 45:#0606FF
+  </textarea>
+</form>
+<meta charset="utf-8" />
+    <script type="text/javascript" src="https://www.ribocentre.org/js/jquery.js"></script>
+    <script type="text/javascript" src="https://www.ribocentre.org/js/d3.js"></script>
+    <script type='text/javascript' src='https://www.ribocentre.org/js/demo/rsvfornac.js'></script>
+    <script type="text/javascript">
+      "use strict"
+      function customColorsContainer() {
+         let container = new fornac.FornaContainer("#custom_colors",
+                 {'applyForce': 1,'editable':'true', 'initialSize':[450,400]});
+         let options = {'structure': '(((((..[[[[[[[(...)((((.{{{{.]])))).....]]]]]}}}})))))',
+             'sequence':             'CCGCCUAACACUGCCAAUGCCGGUCCCAAGCCCGGAUAAAAGUGGAGGGGGCGG'
+         };
+         container.addRNA(options.structure, options);
+         return container;
+     }
+       
+    
+     let cc = customColorsContainer();
+ 
+     function handleCustomColorApply() {
+       cc.addCustomColorsText(document.getElementById("CustomColorText").value);
+       return false;
+     }
+     handleCustomColorApply();
+ 
+     </script>
+
+</td>
+</tr></table>
+<p><br /></p>
+
+<blockquote>
+  <p>3D visualisation</p>
+</blockquote>
+<p>Crystal structure of the twister ribozyme. This representation was generated from PDB ID: 40JI at 2.34 Å resolution. Helices are differentiated by color. T1 and T2 are the two long-range tertiary interactions.</p>
+<table><tr>
+<td><img src="http://127.0.0.1:4000/images/twisterPic/twister3D.png" alt="drawing" style="height:440px" border="0" /></td>
+<td>
+<html>
+  <html lang="en">
+    <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+      <link rel="stylesheet" type="text/css" href="https://www.ribocentre.org/css/mol/pdbe-molstar-3.0.0.css">
+      <script type="text/javascript" src="https://www.ribocentre.org/js/mol/pdbe-molstar-component-3.0.0.js"></script>
+      <script>
+      function customize()
+      {
+        viewerInstance.canvas.setBgColor({r:255, g:255, b:255})
+      }
+      </script>
+      <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .msp-plugin ::-webkit-scrollbar-thumb {
+            background-color: #474748 !important;
+        }
+        .viewerSection {
+          padding-top: 0px;
+        }
+        .controlsSection {
+          width: 300px;
+          display: flex;
+          float:left;
+          padding: 0px 0 0 0;
+          
+        }
+        .controlBox {
+          border: 1px solid lightgray;
+          padding: 10px;
+          margin-bottom: 20px;
+        }
+        #myViewer{
+          float:left;
+          width:460px;
+          height: 455px;
+          position:relative;
+        }
+        
+      </style>
+    </head>
+    <body onload="customize()">
+      <div class="controlsSection">
+          <button onclick="
+            var selectSections = [
+              {
+                struct_asym_id: 'A', 
+                start_residue_number: 1, 
+                end_residue_number: 5, 
+                color:{r:234,g:205,b:31}
+              },
+              {
+                struct_asym_id: 'A', 
+                start_residue_number: 50, 
+                end_residue_number: 54, 
+                color:{r:234,g:205,b:31}
+              },
+              {
+                struct_asym_id: 'A', 
+                start_residue_number: 9, 
+                end_residue_number: 12, 
+                color:{r:230,g:168,b:202}
+              },
+              {
+                struct_asym_id: 'A', 
+                start_residue_number: 41, 
+                end_residue_number: 44, 
+                color:{r:230,g:168,b:202}
+              },
+              {
+                struct_asym_id: 'A', 
+                start_residue_number: 20, 
+                end_residue_number: 23, 
+                color:{r:210,g:72,b:65}
+              },
+              {
+                struct_asym_id: 'A', 
+                start_residue_number: 32, 
+                end_residue_number: 35, 
+                color:{r:210,g:72,b:65}
+              },
+              {
+                struct_asym_id: 'A', 
+                start_residue_number: 13, 
+                end_residue_number: 14, 
+                color:{r:1,g:245,b:1}
+              },
+              {
+                struct_asym_id: 'A', 
+                start_residue_number: 30, 
+                end_residue_number: 31, 
+                color:{r:1,g:245,b:1}
+              },
+              {
+                struct_asym_id: 'A', 
+                start_residue_number: 25, 
+                end_residue_number: 28, 
+                color:{r:1,g:245,b:1}
+              },
+              {
+                struct_asym_id: 'A', 
+                start_residue_number: 46, 
+                end_residue_number: 49, 
+                color:{r:1,g:245,b:1}
+              },
+            {
+              struct_asym_id: 'A', 
+              start_residue_number: 7, 
+              end_residue_number: 7, 
+              color:{r:226,g:62,b:61}
+            },
+            {
+              struct_asym_id: 'A', 
+              start_residue_number: 45, 
+              end_residue_number: 45, 
+              color:{r:31,g:104,b:179}
+            }
+            ]
+            viewerInstance.visual.select({ data: selectSections, nonSelectedColor: {r:255,g:255,b:255}})" style="float:right;">&nbsp;Color Selection&nbsp;</button>
+            <button style="float: left;" onclick="viewerInstance.visual.clearSelection()" >&nbsp; Clear Selection &nbsp;</button>
+      </div>
+  
+      <div class="viewerSection">
+        <div id="myViewer">
+          <pdbe-molstar custom-data-url="https://www.ribocentre.org/pdb/4r4v.pdb" custom-data-format="pdb" molecule-id="4r4v" hide-controls="true"></pdbe-molstar>
+      </div>
+        
+      </div>
+      <script>
+  
+        //Create plugin instance
+        var viewerInstance = new PDBeMolstarPlugin();
+    
+        //Set options (Checkout available options list in the documentation)
+        var options = {
+          moleculeId: '4oji',
+          hideControls: true
+        }
+        
+        //Get element from HTML/Template to place the viewer 
+        var viewerContainer = document.getElementById('myViewer');
+    
+        //Call render method to display the 3D view
+        viewerInstance.render(viewerContainer, options);
+        
+      </script>
+    </body>
+
+</html></td>
+</tr></table>
+<p><br /></p>
+
+<blockquote>
+  <p>Catalytic centre</p>
+</blockquote>
+<p>The active centre of the twister ribozyme. An O2' atom modeled onto dU6 deviates ~90° from the in-line orientation of the O2' nucleophile, P and O5' leaving group that would be optimal for activity.<br>
+  Proposed mechanisms for twister ribozyme using guanine and adenine nucleobases as general base and acid,respectively, in their
+  cleavage reactions.Proposed mechanisms for twister ribozyme using guanine and adenine nucleobases as general base and acid, respectively, in their cleavage reactions (A7 corresponds to A1, G33 corresponds to G45).
+  </p>
+<table><tr>
+<td><img src="https://www.ribocentre.org/images/twisterPic/twister-m10.png" alt="drawing" style="width:450px;height:340px" /></td>
+<td><img src="https://www.ribocentre.org/images/twisterPic/twister-m2.png" alt="drawing" style="width:450px;height:240px" border="1" px="" /></td>
+</tr></table>
+<p><br /></p>
+
+<blockquote>
+  <p>Chemical mechanism</p>
+</blockquote>
+
+<p>The twister ribozyme employs general acid-base catalysis, using guanine and adenine nucleobases like the hairpin and VS ribozymes, but with some important differences. The pH dependence of cleavage rate is bell shaped, corresponding to apparent pKa values of 6.9 and 9.5<sup> [2]</sup>. Substitutions led to the assignment of the upper pKa as resulting from G33, and like hairpin and VS, G N1 is used as the general base in cleavage. An adenine is again used as general acid in the cleavage reaction, but twister differs from the other two ribozymes in two significant respects. First, it is the highly-conserved A1, immediately 3' to the cleavage site that acts as the general acid in cleavage, and an A1G mutation led to a 104-fold loss in activity.  An A1 N7C atomic mutation led to a ribozyme in which the lower pKa was shifted up by 1.5 units. In its position adjacent to the scissile phosphate it is sterically impossible to employ its N1 in proton transfer. So unusually it uses the much more acidic N3 (pKa ~ 1.5) as the general acid in the cleavage reaction<sup> [6]</sup>. However, its apparent pKa is raised by formation of two hydrogen bonds from A1 N6 to negatively-charged backbone phosphate groups. The role of A1 N3 was confirmed by atomic mutation, when it was found that the activity of A1 N3C twister ribozyme was virtually undetectable while A1 N1C twister ribozyme actually became faster.</p>
+
+<p>The twister ribozyme has probably the best understood catalytic mechanism at the present time. The observed rate enhancement arises from four contributions <sup>[6]</sup> :<br />
+ 1. The structure observed in the crystal may be readily remodeled into a conformation that is well aligned for SN2 attack of the O2' nucleophile on the scissile phosphate in the cleavage reaction. <br />
+ 2. The transition state is stabilized by accepting a hydrogen bond from G33 N2.<br />
+ 3. G33 N1 removes a proton from the O2' to make it a stronger nucleophile.<br />
+ 4. A1 N3 donates a proton to the O5' oxyanion leaving group.<br /></p>
+
+<h2 id="references">References</h2>
+
+<hr />
+
+<p><strong>[1] A widespread self-cleaving ribozyme class is revealed by bioinformatics.</strong><br />
+Roth, A., Z. Weinberg, A. G. Chen, P. B. Kim, T. D. Ames and R. R. Breaker <br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/24240507">Nat Chem Biol 10(1): 56-60.(2014)</a><br /><br /></p>
+
+<p><strong>[2] Crystal structure and mechanistic investigation of the twister ribozyme.</strong><br />
+Liu, Y., T. J. Wilson, S. A. McPhee and D. M. Lilley <br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/25038788">Nat Chem Biol 10(9): 739-44.(2014)</a><br /><br /></p>
+
+<p><strong>[3] In-line alignment and Mg(2)(+) coordination at the cleavage site of the env22 twister ribozyme.</strong><br />
+Ren, A., M. Kosutic, K. R. Rajashankar, M. Frener, T. Santner, E. Westhof, R. Micura and D. J. Patel <br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/25410397">Nat Commun 5: 5534.(2014)</a><br /><br /></p>
+
+<p><strong>[4] Structural basis for the fast self-cleavage reaction catalyzed by the twister ribozyme.</strong><br />
+Eiler, D., J. Wang and T. A. Steitz <br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/25157168">Proc Natl Acad Sci U S A 111(36): 13028-33.(2014)</a><br /><br /></p>
+
+<p><strong>[5] A Mini-Twister Variant and Impact of Residues/Cations on the Phosphodiester Cleavage of this Ribozyme Class.</strong><br />
+Kosutic, M., S. Neuner, A. Ren, S. Flur, C. Wunderlich, E. Mairhofer, N. Vusurovic, J. Seikowski, K. Breuker, C. Hobartner, D. J. Patel, C. Kreutz and R. Micura <br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/26473980">Angew Chem Int Ed Engl 54(50): 15128-15133.(2015)</a><br /><br /></p>
+
+<p><strong>[6] The Novel Chemical Mechanism of the Twister Ribozyme.</strong><br />
+Wilson, T. J., Y. Liu, C. Domnick, S. Kath-Schorr and D. M. Lilley <br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/27153229">J Am Chem Soc 138(19): 6151-62.(2016)</a><br /><br /></p>
+
+<p><strong>[7] Twister ribozymes as highly versatile expression platforms for artificial riboswitches.</strong><br />
+Felletti, M., J. Stifel, L. A. Wurmthaler, S. Geiger and J. S. Hartig <br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/27670347">Nat Commun 7: 12834.(2016)</a><br /><br /></p>
+
+<p><strong>[8] High-Throughput Mutational Analysis of a Twister Ribozyme.</strong><br />
+Kobori, S. and Y. Yokobayashi <br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/27461281">Angew Chem Int Ed Engl 55(35): 10354-7.(2016)</a><br /><br /></p>
+
+<p><strong>[9] Ribozyme Catalysis with a Twist: Active State of the Twister Ribozyme in Solution Predicted from Molecular Simulation.</strong><br />
+Gaines, C. S. and D. M. York <br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/26859432">J Am Chem Soc 138(9): 3058-65.(2016)</a><br /><br /></p>
+
+<p><strong>[10] Pseudoknot Formation Seeds the Twister Ribozyme Cleavage Reaction Coordinate.</strong><br />
+Vusurovic, N., Altman, R. B., Terry, D. S., Micura, R. and Blanchard, S. C.<br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/28598157">J Am Chem Soc 139 (24): 8186-8193.(2017)</a><br /><br /></p>
+
+<p><strong>[11] Unwinding the twister ribozyme: from structure to mechanism.</strong><br />
+Gebetsberger, J. and Micura, R.<br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/27863022">Wiley Interdiscip Rev RNA 8 (3).(2017)</a><br /><br /></p>
+
+<p><strong>[12] Mechanistic Debris Generated by Twister Ribozymes.</strong><br />
+Breaker, R. R. <br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/28191925">ACS Chem Biol 12(4): 886-891.(2017)</a><br /><br /></p>
+
+<p><strong>[13] Metals induce transient folding and activation of the twister ribozyme.</strong><br />
+Panja, S., B. Hua, D. Zegarra, T. Ha and S. A. Woodson <br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/28825710">Nat Chem Biol 13(10): 1109-1114.(2017)</a><br /><br /></p>
+
+<p><strong>[14] Cellular Small Molecules Contribute to Twister Ribozyme Catalysis.</strong><br />
+Messina, K. J. and P. C. Bevilacqua <br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/30102530">J Am Chem Soc 140(33): 10578-10582.(2018)</a><br /><br /></p>
+
+<p><strong>[15] Cleaning Up Mechanistic Debris Generated by Twister Ribozymes Using Computational RNA Enzymology.</strong><br />
+Gaines, C. S., T. J. Giese and D. M. York <br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/31328021">ACS Catal 9(7): 5803-5815.(2019)</a><br /><br /></p>
+
+<p><strong>[16] Classification of the nucleolytic ribozymes based upon catalytic mechanism.</strong><br />
+Lilley, D. <br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/31489181">F1000Res 8.(2019)</a><br /><br /></p>
+
+<p><strong>[17] Highly efficient expression of circular RNA aptamers in cells using autocatalytic transcripts.</strong><br />
+Litke, J. L. and S. R. Jaffrey <br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/30962542">Nat Biotechnol 37(6): 667-675.(2019)</a><br /><br /></p>
+
+<p><strong>[18] Light-controlled twister ribozyme with single-molecule detection resolves RNA function in time and space.</strong><br />
+Korman, A., H. Sun, B. Hua, H. Yang, J. N. Capilato, R. Paul, S. Panja, T. Ha, M. M. Greenberg and S. A. Woodson <br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/32430319">Proc Natl Acad Sci U S A 117(22): 12080-12086.(2020)</a><br /><br /></p>
+
+<p><strong>[19] The function of twister ribozyme variants in non-LTR retrotransposition in Schistosoma mansoni.</strong><br />
+Liu, G., H. Jiang, W. Sun, J. Zhang, D. Chen and A. Murchie <br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/34551436">Nucleic Acids Res 49(18): 10573-10588.(2021)</a><br /><br /></p>
+
+
+  </div>
+
+</article>
+
+      </div>
+    </div>
+
+    <div id="footer" class="panel">
+      <div class="panel-footer" style='background-color: #333333; color: #eeeeee;'>
+        <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-4">
+            
+          <p>&copy 2024 GZNL-RDC. </p>
+          <p>We are part of the <a href="https://gzlab.ac.cn">Guangzhou Laboratory</a> and <a href="http://www.rnacentre.org/">RNAcentre</a> and <a href="http://www.gzsys.org.cn/">Sun Yat-sen University</a>.</p>
+          <p>Site made with <a href="https://jekyllrb.com">Jekyll</a>;  <a href="{{ site.url }}{{ site.baseurl }}/aboutwebsite.html">copy and  modify it for your own research group</a>.</p>
+          <p>  </p>
+          <p>  </p>
+          </div>
+          
+          <div class="col-sm-4">
+          Funding:<br />
+          - <a href="https://gzlab.ac.cn">R&D Programs of Guangzhou Laboratory</a><br />
+          - <a href="http://www.most.gov.cn/">MOST IT+BT projects</a> <br />
+          - <a href="https://www.nsfc.gov.cn/">NSFC</a> <br />	  
+          <br>
+          <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+          <!--<span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;<span id="busuanzi_container_site_uv"><strong>: <a href=""><span id="busuanzi_value_site_uv"></span></strong></a> </span> &nbsp;&nbsp;
+          !--><span class="glyphicon glyphicon-eye-open"></span>&nbsp;&nbsp;<span id="busuanzi_container_site_pv">: <a href="" ><span id="busuanzi_value_site_pv"></span></a> </span>
+          </div>
+          
+          <div class="col-sm-4">
+          Contact:<br />
+          Building B2, Guangzhou National Laboratory<br />
+          96 Xingdao South Road, Guangzhou International Bio Island, <br />
+          Haizhu District, Guangzhou, Guangdong, China.<br />
+          (<a href="https://goo.gl/maps/hDLr6siEAS2Eaypt8">Maps</a>)
+          </div>
+        </div>
+        </div>
+      </div>
+      </div>
+      
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+      <script src="{{ site.url }}{{ site.baseurl }}/js/bootstrap.min.js"></script>
+
+
+  </body>
+
+</html>

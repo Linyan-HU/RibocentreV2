@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Spliceosome</title>
+  <meta name="description" content="click into different sections:">
+  <!--<link rel="stylesheet" href="http://localhost:4000/css/main.css>-->
+  <link rel="stylesheet" href="https://www.ribocentre.org/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/ribozyme/2022/04/19/Spliceosome.html">
+  <link rel="shortcut icon" type ="image/x-icon" href="https://www.ribocentre.org/images/favicon.ico">
+
+
+
+</head>
+
+
+  <body>
+
+    <!--div class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <style>
+        /* Modify the background color https://www.color-hex.com/color-palette/1011604 */
+        .navbar {
+            background-color: #0874c4;
+        }
+        .navbar .navbar-brand,
+        .navbar .navbar-text {
+            color: #eeeeee;
+        }
+
+		#now a{
+			color:#fff
+
+		}
+		#now a:hover{
+			font-size: 20px;
+		}
+  </style>
+
+  <div class="container-fluid">
+	<div class="navbar-header">
+	  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+		<span class="sr-only">Toggle navigation</span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+		<span class="icon-bar"></span>
+	  </button>
+	
+    <a class="navbar-brand" href="https://www.ribocentre.org/">
+		
+		<img class="navbar-brand" src="https://www.ribocentre.org/images/Ribo_centre_logo.jpg" style='height:50px;margin-top:-14px;margin-bottom:0;padding:0;' alt="logo">
+		&nbsp;Ribocentre 
+	</a>
+	</div>
+	<div class="collapse navbar-collapse" id="navbar-collapse-1">
+	  <ul class="nav navbar-nav navbar-right">
+		<li id="now"><a href="https://www.ribocentre.org/">Home</a></li>
+		<li id="now"><a href="https://www.ribocentre.org/ribozyme">Ribozymes</a></li>
+		<li id="now"><a href="https://www.ribocentre.org/sequence">Sequences</a></li>
+		<li id="now"><a href="https://www.ribocentre.org/structure">Structures</a></li>
+		<li id="now"><a href="https://www.ribocentre.org/catalysis">Catalysis</a></li>
+		<li id="now"><a href="https://www.ribocentre.org/application">Applications</a></li>
+		<li id="now"><a href="https://www.ribocentre.org/publications">Publications</a></li>
+		<li id="now"><a href="https://www.ribocentre.org/Helps">Help</a></li>
+	  </ul>
+	</div>
+  </div>
+</div-->
+
+<style>
+  .full-width-image {
+	  width: 100%;
+	  height: 350px;
+	  overflow: hidden;
+	  border-radius: 0;
+	  margin-top: 0;
+	  margin-bottom: 0;
+	  position: relative;
+	  background: url(../../images/homepicture.jpg) no-repeat;
+	  background-size: cover; 
+	  background-position: center; 
+  }
+  
+  .full-width-image img {
+	  width: 100%;
+	  height: 100%;
+	  object-fit: cover;
+	  object-position: center
+  }
+  
+  .search-box {
+	  height: 100%;
+	  width: 70%;
+	  margin: 0 auto;
+	  display: flex;
+	  align-items: center
+  }
+  
+  .search {
+	  padding-top: 0px;
+	  padding-bottom: 0px; 
+	  padding-left: 20px; 
+	  padding-right: 20px;
+	  background: #fff;
+	  position: absolute;
+  }
+  
+  .search h2 {
+	  font-size: 20px
+  }
+  
+  .search .i {
+	  display: flex;
+	  align-items: center
+  }
+  
+  .search .i img {
+	  width: 70px;
+	  height: 50px;
+	  object-fit: contain
+  }
+  
+  .search .i h1 {
+	  font-size: 28px;
+	  font-weight: 700;
+	  margin-left: 10px
+  }
+  
+  .search .tip {
+	  font-size: 14px;
+	  margin-top: 10px
+  }
+  
+  .searchInput {
+	  margin-top: 10px;
+	  width: 450px;
+	  height: 32px;
+	  display: flex
+  }
+  
+  .searchInput input {
+	  flex: 1;
+	  height: 100%;
+	  line-height: 32px;
+	  border: 1px solid #868686;
+	  outline: 0;
+	  border-radius: 7px;
+	  padding: 0 10px
+  }
+  
+  .gsc-control {
+	width: 300px;
+  }
+  
+  .gsc-control div {
+	position: static;
+  }
+  
+  /* Slight reset to make the preview have ample padding. */
+  .gsc-control-cse {
+	padding: 1em;
+  }
+  
+  .gsc-control-cse,
+  .gsc-control-cse .gsc-table-result {
+	width: auto;
+	font-family: Arial, sans-serif;
+	font-size: 13px;
+  }
+  
+  .gsc-control-wrapper-cse {
+	width: 600px;
+  }
+  .gsc-search-button-v2, .gsc-search-button-v2:hover, .gsc-search-button-v2:focus {
+	  border-color: #158CBA;
+	  background-color: #158CBA;
+	  background-image: none;
+	  filter: none;
+  }
+  
+  .gsc-control-cse, .gsc-control-cse .gsc-table-result {
+	  width: auto;
+	  font-family: Arial, sans-serif;
+	  font-size: 1px;
+  }
+  .gsc-input {
+	  font-size: 16px;
+	  color: #000000;
+  }
+  .col-sm-4 {
+    padding-left: 0px;
+    padding-right: 26px;
+}
+input.gsc-input, .gsc-input-box, .gsc-input-box-hover, .gsc-input-box-focus {
+    border-color: #ffffff;
+}
+h1, .h1, h2, .h2, h3, .h3 {
+    margin-top: 22px;
+    margin-bottom: 0px;
+}
+img {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    border-radius: 2%;
+}
+  </style>
+
+
+<div class="navbar-expand-lg navbar-dark" style='background-color: #333333; border-radius: 0; margin-bottom: 0; border: 0; height: 30px;' role="navigation">
+	<div class="container-fluid" style='height: 30px; max-width: 1000px;'>
+		<ul class="nav navbar-nav navbar-right" style='height: 30px;'>
+		  <li><a style='display: inline; padding: 15px 15px 5px 5px; line-height: 30px;' class="nav-link-0" href="https://www.gznl.org/">
+			  <img src="https://www.ribocentre.org/images/header/home.svg" style='height: 20px; width: auto; margin: 0;'>
+			  Home</a></li>
+		  <li><a style='display: inline; padding: 15px 15px 5px 5px; line-height: 30px;' class="nav-link-0" href="https://www.gznl.org/database/">
+			  <img src="https://www.ribocentre.org/images/header/database.svg" style='height: 20px; width: auto; margin: 0;'>
+			  Database</a></li>
+		  <li><a style='display: inline; padding: 15px 15px 5px 5px; line-height: 30px;' class="nav-link-0" href="https://www.gznl.org/research/">
+			  <img src="https://www.ribocentre.org/images/header/research.svg" style='height: 20px; width: auto; margin: 0;'>
+			  Research</a></li>
+		  <li><a style='display: inline; padding: 15px 15px 5px 5px; line-height: 30px;' class="nav-link-0" href="https://www.gznl.org/aboutus/">
+			  <img src="https://www.ribocentre.org/images/header/aboutus.svg" style='height: 20px; width: auto; margin: 0;'>
+			  About us</a></li>
+		  <li><a style='display: inline; padding: 15px 15px 5px 5px; line-height: 30px;' class="nav-link-0" href="https://gzlab.ac.cn/">
+			  GZNL-RDC
+			  <img src="https://www.ribocentre.org/images/header/gznl2.svg" style='height: 20px; width: auto; margin: 0;'>
+			  </a></li>
+		</ul>
+	</div>
+  </div>
+
+
+  <div class="full-width-image">
+    <div class="search-box">
+      <div class="search">
+      <h2>GZNL's Respiratory Data Centre, GZNL-RDC</h2>
+      <div class="i"><img src="https://www.ribocentre.org/images/ribocentre.svg">
+        <h1>Ribocentre</h1>
+      </div>
+      <p>A database of ribozymes</p>
+      <script async src="https://cse.google.com/cse.js?cx=2dcb771063bc36a13"></script>
+      
+        <div class="gcse-search"></div>
+      <p>Example:
+      <a href="https://www.ribocentre.org/search.html?q=rna#gsc.tab=0&gsc.q=rna&gsc.page=1"  target="_blank">RNA</a>&nbsp;&nbsp;
+      <a href="https://www.ribocentre.org/search.html?q=Ribo#gsc.tab=0&gsc.q=Ribo&gsc.page=1"  target="_blank">Ribo</a>&nbsp;&nbsp;
+      <a href="https://www.ribocentre.org/search.html?q=breaker#gsc.tab=0&gsc.q=breaker&gsc.page=1"  target="_blank">Breaker</a>&nbsp;&nbsp;
+      <a href="https://www.ribocentre.org/ribozyme">Ribozymes</a>&nbsp;&nbsp;
+      <a href="https://www.ribocentre.org/publications">Publications</a>&nbsp;&nbsp;
+      <a href="https://www.ribocentre.org/docs/VS-ribozyme.html" target="_blank"> VS with 3D structures</a>&nbsp;&nbsp;
+      <a href="https://www.ribocentre.org/Helps">Teams</a>&nbsp;&nbsp;
+      </p>
+      </div>
+    </div>
+    </div>
+
+
+    <div class="navbar navbar-expand-lg navbar-dark bg-primary" style='border-radius: 0; border: 0;' role="navigation">
+  
+      <div class="container-fluid" style='max-width: 75%;'>
+        <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        
+        <a class="navbar-brand" href="https://www.ribocentre.org">
+          
+          <img class="navbar-brand" src="https://www.ribocentre.org/images/ribocentre-logo.svg" style='height:50px;margin-top:-14px;margin-bottom:0;padding:2px 2px;border-radius: 0;' alt="logo">
+          <!--b style='font-size: 32px; color: #eeeeee;'>Ribocentre</b-->
+        </a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a class="nav-link-1" href="https://www.ribocentre.org/" style="font-size: 20px">Home</a></li>
+          <li><a class="nav-link-1" href="https://www.ribocentre.org/ribozyme" style="font-size: 20px">Ribozymes</a></li>
+          <li><a class="nav-link-1" href="https://www.ribocentre.org/sequence" style="font-size: 20px">Sequences</a></li>
+          <li><a class="nav-link-1" href="https://www.ribocentre.org/structure" style="font-size: 20px">Structures</a></li>
+          <li><a class="nav-link-1" href="https://www.ribocentre.org/catalysis" style="font-size: 20px">Catalysis</a></li>
+          <li><a class="nav-link-1" href="https://www.ribocentre.org/application" style="font-size: 20px">Applications</a></li>
+          <li><a class="nav-link-1" href="https://www.ribocentre.org/publications" style="font-size: 20px">Publications</a></li>
+          <li><a class="nav-link-1" href="https://www.ribocentre.org/Helps" style="font-size: 20px">Help</a></li>
+        </ul>
+        </div>
+      </div>
+      </div>
+
+
+
+
+
+    <div class="container-fluid">
+      <div class="row">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Spliceosome</h1>
+    <p class="post-meta"><time datetime="2022-04-19T03:25:52+08:00" itemprop="datePublished">Apr 19, 2022</time> • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Deng Jie, Peng Xuemei</span></span></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <h4 id="click-into-different-sections">click into different sections:</h4>
+
+<ul>
+  <li><a href="#timeline">Timeline</a></li>
+  <li><a href="#description">Description</a></li>
+  <li><a href="#references">References</a></li>
+</ul>
+
+<h2 id="timeline">Timeline</h2>
+
+<hr />
+<html lang="zh-cn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title></title>
+
+</head>
+<style>
+  table {
+        border: 2px solid #f8f8ff;
+        border: 2px solid #767676;
+		    border: 2px solid #767676;
+		    border-radius: 5px;
+		    background-color: #fff;
+        }
+.timeline {
+  list-style: none;
+  padding: 10px 0 10px;
+  position: relative;
+}
+.timeline:before {
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  content: " ";
+  width: 3px;
+  background-color: #eeeeee;
+  left: 50%;
+  margin-left: -1.5px;
+}
+.timeline > li {
+  margin-bottom: 10px;
+  position: relative;
+}
+.timeline > li:before,
+.timeline > li:after {
+  content: " ";
+  display: table;
+}
+.timeline > li:after {
+  clear: both;
+}
+.timeline > li:before,
+.timeline > li:after {
+  content: " ";
+  display: table;
+}
+.timeline > li:after {
+  clear: both;
+}
+.timeline > li > .timeline-panel {
+  width: 46%;
+  float: left;
+  border: 1px solid #d4d4d4;
+  border-radius: 2px;
+  padding: 5px;
+  position: relative;
+  -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+}
+.timeline > li > .timeline-panel:before {
+  position: absolute;
+  top: 16px;
+  right: -12px;
+  display: inline-block;
+  border-top: 10px solid transparent;
+  border-left: 10px solid #ccc;
+  border-right: 0 solid #ccc;
+  border-bottom: 10px solid transparent;
+  content: " ";
+}
+.timeline > li > .timeline-panel:after {
+  position: absolute;
+  top: 16px;
+  right: -10px;
+  display: inline-block;
+  border-top: 9px solid transparent;
+  border-left: 10px solid #fff;
+  border-right: 0 solid #fff;
+  border-bottom: 10px solid transparent;
+  content: " ";
+}
+.timeline > li > .timeline-badge {
+  color: #fff;
+  width: 25px;
+  height: 25px;
+  line-height: 40px;
+  font-size: 1.4em;
+  text-align: center;
+  position: absolute;
+  top: 16px;
+  left: 48.5%;
+  margin-left: 0px;
+  background-color: #999999;
+  z-index: 100;
+  border-top-right-radius: 50%;
+  border-top-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+}
+.timeline > li.timeline-inverted > .timeline-panel {
+  float: right;
+}
+.timeline > li.timeline-inverted > .timeline-panel:before {
+  border-left-width: 0;
+  border-right-width: 15px;
+  left: -15px;
+  right: auto;
+}
+.timeline > li.timeline-inverted > .timeline-panel:after {
+  border-left-width: 0;
+  border-right-width: 14px;
+  left: -14px;
+  right: auto;
+}
+.timeline-badge.primary {
+  background-color: #2e6da4 !important;
+}
+.timeline-badge.success {
+  background-color: #3f903f !important;
+}
+.timeline-badge.warning {
+  background-color: #f0ad4e !important;
+}
+.timeline-badge.danger {
+  background-color: #d9534f !important;
+}
+.timeline-badge.info {
+  background-color: #5bc0de !important;
+}
+.timeline-title {
+  margin-top: 0;
+  color: inherit;
+}
+.timeline-body > p,
+.timeline-body > ul {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.timeline-body > p + p {
+  margin-top: 0px;
+}
+
+</style>
+    <ul class="timeline">
+        <li>
+          <div class="timeline-badge warning"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title"> <a href="https://www.ncbi.nlm.nih.gov/pubmed/902310" target="_blank" style="font-size:25px;">1977</a> Splicing phenomenon found<sup>[1]</sup></h4>
+            </div>
+          </div>
+        </li>
+        <li class="timeline-inverted">
+          <div class="timeline-badge primary"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title"> <a href="https://www.ncbi.nlm.nih.gov/pubmed/6190573" target="_blank" style="font-size:25px;">1983</a> First isolation of spliceosome subunits<sup>[2]</sup></h4>
+            </div>
+            <div class="timeline-body">
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-badge warning"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title"> <a href="https://www.ncbi.nlm.nih.gov/pubmed/3160483" target="_blank" style="font-size:25px;">1985</a> In vitro splicing experiment<sup>[3]</sup></h4>
+            </div>
+          </div>
+        </li>
+        <li class="timeline-inverted">
+          <div class="timeline-badge primary"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title"> <a href="https://www.ncbi.nlm.nih.gov/pubmed/3160482" target="_blank" style="font-size:25px;">1985</a> In vitro splicing experiment<sup>[4]</sup></h4>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-badge warning"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title"> <a href="https://www.ncbi.nlm.nih.gov/pubmed/1423631" target="_blank" style="font-size:25px;">1992</a> Demonstrate a conserved base-pairing interaction between the U6 and U2 snRNAs that is mutually exclusive with the U4-U6 interaction<sup>[5]</sup></h4>
+            </div>
+          </div>
+        </li>
+        <li class="timeline-inverted">
+          <div class="timeline-badge primary"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title"><a href="https://www.ncbi.nlm.nih.gov/pubmed/8341661" target="_blank" style="font-size:25px;">1993</a> Proposed that the two phosphotransesterifications of splicing are catalyzed by a two-metal mechanism<sup>[6]</sup></h4>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-badge warning"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title"><a href="https://www.ncbi.nlm.nih.gov/pubmed/9285595" target="_blank" style="font-size:25px;">1997</a> Divalent metals stabilize the leaving group during each step of splicing<sup>[7]</sup></h4>
+            </div>
+          </div>
+        </li>
+        <li class="timeline-inverted">
+          <div class="timeline-badge primary"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title"><a href="https://www.ncbi.nlm.nih.gov/pubmed/11130730" target="_blank" style="font-size:25px;">2000</a> Metal-ion coordination by U6 small nuclear RNA contributes to catalysis in the spliceosome<sup>[8]</sup></h4>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-badge warning"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title"><a href="https://www.ncbi.nlm.nih.gov/pubmed/11607023" target="_blank" style="font-size:25px;">2001</a> U2 and U6 can base-pair and fold in vitro into a structure that catalyzes reactions similar to the two steps of pre-mRNA splicing<sup>[9]</sup></h4>
+            </div>
+          </div>
+        </li>
+        <li class="timeline-inverted">
+          <div class="timeline-badge primary"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title"><a href="https://www.ncbi.nlm.nih.gov/pubmed/19458033" target="_blank" style="font-size:25px;">2009</a> U2/U6 helix I promotes both catalytic steps of pre-mRNA splicing and rearranges in between these steps<sup>[10]</sup></h4>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-badge warning"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title"> <a href="https://www.ncbi.nlm.nih.gov/pubmed/23354046" target="_blank" style="font-size:25px;">2013</a> Provides crucial insights into the architecture of the spliceosome active site, and reinforces the notion that nuclear pre-mRNA splicing and group II intron splicing have a common origin.<sup>[11]</sup></h4>
+            </div>
+          </div>
+        </li>
+        <li class="timeline-inverted">
+          <div class="timeline-badge primary"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title"><a href="https://www.ncbi.nlm.nih.gov/pubmed/24196718" target="_blank" style="font-size:25px;">2013</a> Demonstrate that RNA mediates catalysis within the spliceosome<sup>[12]</sup></h4>
+            </div>.
+          </div>
+        </li>
+        <li>
+          <div class="timeline-badge warning"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title"><a href="https://www.ncbi.nlm.nih.gov/pubmed/26292707" target="_blank" style="font-size:25px;">2015</a> S.p ILS, 3.6 Å &amp; The first atomic structure of the intact spliceosome<sup>[13]</sup></h4>
+            </div>
+          </div>
+        </li>
+        <li class="timeline-inverted">
+          <div class="timeline-badge primary"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title"><a href="https://www.ncbi.nlm.nih.gov/pubmed/27459055" target="_blank" style="font-size:25px;">2016</a> The resolution of tri-snRNP, a complex during splice assembly, was increased to 5.9 angstroms<sup>[14]</sup> </h4>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-badge warning"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title"><a href="https://www.ncbi.nlm.nih.gov/pubmed/27445308" target="_blank" style="font-size:25px;">2016</a> S.c C, 3.4 Å &amp; Active site after branching<sup>[15]</sup></h4>
+            </div>
+          </div>
+        </li>
+        <li class="timeline-inverted">
+          <div class="timeline-badge primary"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title"><a href="https://www.ncbi.nlm.nih.gov/pubmed/26743623" target="_blank" style="font-size:25px;">2016</a> U4/U6.U5 tri-snRNP,3.8Å<sup>[16]</sup></h4>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-badge warning"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title"><a href="https://www.ncbi.nlm.nih.gov/pubmed/27445306" target="_blank" style="font-size:25px;">2016</a> B act , 3.5 Å &amp; Catalytic center is formed<sup>[17]</sup></h4>
+            </div>
+          </div>
+        </li>
+        <li class="timeline-inverted">
+          <div class="timeline-badge primary"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title"><a href="https://www.ncbi.nlm.nih.gov/pubmed/27980089" target="_blank" style="font-size:25px;">2017</a> S.c C*, 4.0 Å<sup>[18]</sup></h4>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-badge warning"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title"><a href="https://www.ncbi.nlm.nih.gov/pubmed/28076345" target="_blank" style="font-size:25px;">2017</a> S.c C*, 3.8 Å<sup>[19]</sup></h4>
+            </div>
+          </div>
+        </li>
+        <li class="timeline-inverted">
+          <div class="timeline-badge primary"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title"><a href="https://www.ncbi.nlm.nih.gov/pubmed/28530653" target="_blank" style="font-size:25px;">2017</a> S.c B, 7.2 (3.7) Å<sup>[20]</sup></h4>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-badge warning"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title"><a href="https://www.ncbi.nlm.nih.gov/pubmed/28919079" target="_blank" style="font-size:25px;">2017</a> S.c ILS, 3.5 Å<sup>[21]</sup></h4>
+            </div>
+          </div>
+        </li>
+        <li class="timeline-inverted">
+          <div class="timeline-badge primary"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title"><a href="https://www.ncbi.nlm.nih.gov/pubmed/29146870" target="_blank" style="font-size:25px;">2017</a> S.c P, 3.3 Å<sup>[22]</sup></h4>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-badge warning"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title"><a href="https://www.ncbi.nlm.nih.gov/pubmed/29153833" target="_blank" style="font-size:25px;">2017</a> S.c P, 3.6 Å<sup>[23]</sup></h4>
+            </div>
+          </div>
+        </li>
+        <li class="timeline-inverted">
+          <div class="timeline-badge primary"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title"><a href="https://www.ncbi.nlm.nih.gov/pubmed/28781166" target="_blank" style="font-size:25px;">2017</a> C*, 5.9 Å<sup>[24]</sup></h4>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-badge warning"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title"><a href="https://www.ncbi.nlm.nih.gov/pubmed/28502770" target="_blank" style="font-size:25px;">2017</a> C*, 3.8 ÅThe first atomic model of human Spliceosome<sup>[25]</sup></h4>
+            </div>
+          </div>
+        </li>
+        <li class="timeline-inverted">
+          <div class="timeline-badge primary"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title"><a href="https://www.ncbi.nlm.nih.gov/pubmed/28076346" target="_blank" style="font-size:25px;">2017</a> B, 9.9 (4.5) Å<sup>[26]</sup></h4>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-badge warning"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title"><a href="https://www.ncbi.nlm.nih.gov/pubmed/29794219" target="_blank" style="font-size:25px;">2018</a> S.c pre-B, 3.3-4.6 Å &amp; S.c B, 3.9 Å<sup>[27]</sup> </h4>
+            </div>
+          </div>
+        </li>
+        <li class="timeline-inverted">
+          <div class="timeline-badge primary"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title"><a href="https://www.ncbi.nlm.nih.gov/pubmed/29995849" target="_blank" style="font-size:25px;">2018</a> S.c A, 4.9 (4.0) Å<sup>[28]</sup></h4>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-badge warning"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title"><a href="https://www.ncbi.nlm.nih.gov/pubmed/29301961" target="_blank" style="font-size:25px;">2018</a> C, 4.1 Å<sup>[29]</sup> </h4>
+            </div>
+          </div>
+        </li>
+        <li class="timeline-inverted">
+          <div class="timeline-badge primary"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title"><a href="https://www.ncbi.nlm.nih.gov/pubmed/29361316" target="_blank" style="font-size:25px;">2018</a> Bact , 3.4 Å (core)<sup>[30]</sup></h4>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-badge warning"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title"><a href="https://www.ncbi.nlm.nih.gov/pubmed/30315277" target="_blank" style="font-size:25px;">2018</a> pre-B (5.7 Å) and B (3.8 Å)<sup>[31]</sup></h4>
+            </div>
+          </div>
+        </li>
+        <li class="timeline-inverted">
+          <div class="timeline-badge primary"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title"><a href="https://www.ncbi.nlm.nih.gov/pubmed/30879786" target="_blank" style="font-size:25px;">2019</a> S.c B*, 2.9-3.8 ÅFour distinct structures on two different substrates<sup>[32]</sup></h4>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-badge warning"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title"><a href="https://www.ncbi.nlm.nih.gov/pubmed/30705154" target="_blank" style="font-size:25px;">2019</a> P, 3.3 Å<sup>[33]</sup></h4>
+            </div>
+          </div>
+        </li>
+        <li class="timeline-inverted">
+          <div class="timeline-badge primary"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title"><a href="https://www.ncbi.nlm.nih.gov/pubmed/30728453" target="_blank" style="font-size:25px;">2019</a> P (3.0 Å) and ILS (2.9 Å)<sup>[34]</sup></h4>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-badge warning"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title"><a href="https://www.ncbi.nlm.nih.gov/pubmed/30975767" target="_blank" style="font-size:25px;">2019</a> pre-B, 3.3 Å Mechanism of 5' splice site transfer for human spliceosome activation<sup>[35]</sup></h4>
+            </div>
+          </div>
+        </li>
+        <li class="timeline-inverted">
+          <div class="timeline-badge primary"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title"><a href="https://www.ncbi.nlm.nih.gov/pubmed/30879786" target="_blank" style="font-size:25px;">2019</a> Mechanism of Branching<sup>[36]</sup></h4>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-badge warning"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title"><a href="https://www.ncbi.nlm.nih.gov/pubmed/32494006" target="_blank" style="font-size:25px;">2020</a> The structure of 17s U2 snRNP was analyzed and a complete molecular model of 17s U2 snRNP was obtained<sup>[37]</sup></h4>
+            </div>
+          </div>
+        </li>
+        <li class="timeline-inverted">
+          <div class="timeline-badge primary"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title"><a href="https://www.ncbi.nlm.nih.gov/pubmed/33243851" target="_blank" style="font-size:25px;">2020</a> Mechanism of protein-guided folding of the active site U2/U6 RNA during spliceosome activation<sup>[38]</sup></h4>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="timeline-badge warning"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title"><a href="https://www.ncbi.nlm.nih.gov/pubmed/33243853" target="_blank" style="font-size:25px;">2021</a> Mechanism of spliceosome remodeling by the ATPase/helicase Prp2 and its coactivator Spp2<sup>[39]</sup></h4>
+            </div>
+          </div>
+        </li>
+        <li class="timeline-inverted">
+          <div class="timeline-badge primary"></div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="timeline-title"><a href="https://www.ncbi.nlm.nih.gov/pubmed/34822310" target="_blank" style="font-size:25px;">2022</a> A series of high-resolution (2.0-2.2 Å) U2 snRNP structures were identified<sup>[40]</sup></h4>
+            </div>
+          </div>
+        </li>
+    </ul>
+</html>
+
+<h2 id="description">Description</h2>
+
+<hr />
+
+<font size="4">The spliceosome is a highly dynamic and heterogeneous metal ribozyme; During the splicing reaction, the dynamic spliceosome has an immobile core of about 20 protein and RNA components, which are organized around a conserved splicing active site. The divalent metal ions, coordinated by U6 small nuclear RNA (snRNA), catalyze the branching reaction and exon ligation.</font>
+<p><br /></p>
+
+<blockquote>
+  <p>Choreography of the RNA elements during the splicing cycle</p>
+</blockquote>
+
+<p>Choreography of the RNA elements during the splicing cycle. Figure based on <sup>[42]</sup>. The spliceosomal assembly begins with recognition of 5'SS, BPS, and 3'SS. The U1 snRNP and other splicing factors associate with pre-mRNA strand to assemble the E complex. The U2 snRNA base pairs with BPS to yield a pre-spliceosomal A complex, which then binds the U4/U6.U5 tri-snRNP to form the pre-B complex. Pre-B complex to B complex is activated by prp28, during which U1 snRNP dissociates and 5 'SS translocates to the vicinity of U6 snRNA. Under the activation of brr2, U4 snRNP dissociates and forms B act complex. In the B act complex,the 5'SS and 5'-exons are recognized by the ACAGA box of U6 snRNA and the loop I of U5 snRNA, respectively. The B act complex is converted to B * by the action of Prp2. Catalysis begins in the resulting B *complex and branching begins with the addition of step I factors. Branching reaction to occur at the 5'SS, producing the free 5'-exon and the intron lariat structure<sup>[44]</sup>. The C complex is reshaped by Prp16 to move the lariat junction away from the active site and to allow proper engagement of the 3'SS. In the C *complex, exon ligation occurs in the presence of step II. Driven by Prp22, the spliceosome begins to disintegrate and the ligated exon is released from the P complex. The color scheme is as follows: U1 (yellow), U2 (green), U4 (orange), U5 (pink), U6 (blue) snRNAs; intron of pre-mRNA (magenta); and two exons of pre-mRNA : 5'-exton(red),3'-exton (orange). Abbreviations: BPS, branch point sequence; pre-mRNA, precursor messenger RNA; SS, splice site; ILS, intron lariat spliceosome.</p>
+
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+</head>
+<style>
+   body {
+    width: 100%;
+    height: 100vh;
+}
+   button {
+   margin-right: 0px;
+}
+ .main-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+   .zoom-wrapper1 {
+    width: 600px;
+    height:600px;
+    border: 2px solid #767676;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+</style>
+  <body>
+    <div class="main-container">
+        <div class="zoom-wrapper1">
+            <div class="zoom-area1">
+                <img src="https://www.ribocentre.org/images/SplicePic/Spliceosome_V4.svg" alt="drawing" style="weight:600px;height:400px;" />
+            </div>
+        </div>
+    </div>
+    <script src="https://www.ribocentre.org/js/panzoom.js"></script>
+    <script type="text/javascript">
+      var zoomWraper1 = document.querySelector(".zoom-wrapper1");
+      var panzoom1 = Panzoom(document.querySelector(".zoom-area1"), {
+      maxScale: 6
+      });
+      zoomWraper1.addEventListener("wheel", panzoom1.zoomWithWheel);
+      panzoom1.zoom(300 / document.querySelector(".zoom-area1 img").height);
+      panzoom2.pan(0, 0);
+    </script>
+  </body>
+
+</html>
+
+<p><br /></p>
+
+<blockquote>
+  <p>Transesterification Reactions</p>
+</blockquote>
+
+<p>The transesterification Reactions in the Spliceosome. The branching and ligation reactions require formation of a trigonal planar transition state that is stabilized by two magnesium ions. Figure based on <sup>[12]</sup>. The two transesterification reactions occur at the same active site in the spliceosome. Magnesium ions are required in the active site for catalysis, and they function to stabilize the transition states. The positive charge on the magnesium ion interacts with the negatively charged oxygen leaving group. This interaction reduces oxygen's attraction to the positively charged phosphate, which allows it to dissociate more readily. In both the catalytic reactions, magnesium ions interact with nucleotides in U6 snRNA and the pre-mRNA strand. The snRNA and pre-mRNA interact with the catalytic metal ion through the oxygen attached to the phosphate backbone. There are two non-bridging oxygens attached to each phosphate.<br /><br />
+<img src="https://www.ribocentre.org/images/SplicePic/reaction.png" alt="drawing" style="weight:450px;height:270px;display:block;margin:0 auto;" /><br /></p>
+
+<h2 id="references">References</h2>
+
+<hr />
+<p><strong>[1] An amazing sequence arrangement at the 5' ends of adenovirus 2 messenger RNA.</strong><br />
+Chow, L. T., R. E. Gelinas, T. R. Broker and R. J. Roberts <br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/902310" target="_blank">Cell 12(1): 1-8.(1977)</a><br /><br /></p>
+
+<p><strong>[2] The U1 small nuclear RNA-protein complex selectively binds a 5' splice site in vitro.</strong><br />
+Mount, S. M., I. Pettersson, M. Hinterberger, A. Karmas and J. A. Steitz <br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/6190573" target="_blank">Cell 33(2): 509-518.(1983)</a><br /><br /></p>
+
+<p><strong>[3] Stepwise assembly of a pre-mRNA splicing complex requires U-snRNPs and specific intron sequences.</strong><br />
+Frendewey, D. and W. Keller <br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/3160483" target="_blank">Cell 42(1): 355-367.(1985)</a><br /><br /></p>
+
+<p><strong>[4] A multicomponent complex is involved in the splicing of messenger RNA precursors.</strong><br />
+Grabowski, P., S. Seiler and P. Sharp <br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/3160482" target="_blank">Cell 42(1): 345-353.(1985)</a><br /><br /></p>
+
+<p><strong>[5] A novel base-pairing interaction between U2 and U6 snRNAs suggests a mechanism for the catalytic activation of the spliceosome.</strong><br />
+Madhani, H. D. and C. Guthrie <br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/1423631" target="_blank">Cell 71(5): 803-817.(1992)</a><br /><br />
+<strong>[6] A general two-metal-ion mechanism for catalytic RNA.</strong><br />
+Steitz, T. A. and J. A. Steitz <br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/8341661" target="_blank">Proc Natl Acad Sci U S A 90(14): 6498-6502.(1993)</a><br /><br />
+<strong>[7] Metal ion catalysis during splicing of premessenger RNA.</strong><br />
+Sontheimer, E. J., S. Sun and J. A. Piccirilli <br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/9285595" target="_blank">Nature 388(6644): 801-805.(1997)</a><br /><br />
+<strong>[8] Metal-ion coordination by U6 small nuclear RNA contributes to catalysis in the spliceosome.</strong><br />
+Yean, S. L., G. Wuenschell, J. Termini and R. J. Lin <br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/11130730" target="_blank">Nature 408(6814): 881-884.(2000)</a><br /><br />
+<strong>[9] Splicing-related catalysis by protein-free snRNAs.</strong><br />
+Valadkhan, S. and J. L. Manley <br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/11607023" target="_blank">Nature 413(6857): 701-707.(2001)</a><br /><br />
+<strong>[10] Evidence that U2/U6 helix I promotes both catalytic steps of pre-mRNA splicing and rearranges in between these steps.</strong><br />
+Mefford, M. A. and J. P. Staley <br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/19458033" target="_blank">RNA 15(7): 1386-1397.(2009)</a><br /><br />
+<strong>[11] Crystal structure of Prp8 reveals active site cavity of the spliceosome.</strong><br />
+Galej, W. P., C. Oubridge, A. J. Newman and K. Nagai <br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/23354046" target="_blank">Nature 493(7434): 638-643.(2013)</a><br /><br />
+<strong>[12] RNA catalyses nuclear pre-mRNA splicing.</strong><br />
+Fica, S. M., N. Tuttle, T. Novak, N. S. Li, J. Lu, P. Koodathingal, Q. Dai, J. P. Staley and J. A. Piccirilli <br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/24196718" target="_blank">Nature 503(7475): 229-234.(2013)</a><br /><br />
+<strong>[13] Structure of a yeast spliceosome at 3.6-angstrom resolution.</strong><br />
+Yan, C., J. Hang, R. Wan, M. Huang, C. C. Wong and Y. Shi<br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/26292707" target="_blank">Science 349(6253): 1182-1191.(2015)</a><br /><br />
+<strong>[14] Cryo-EM structure of the spliceosome immediately after branching.</strong><br />
+Galej, W. P., M. E. Wilkinson, S. M. Fica, C. Oubridge, A. J. Newman and K. Nagai<br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/27459055" target="_blank">Nature 537(7619): 197-201.(2016)</a><br /><br />
+<strong>[15] Structure of a yeast catalytic step I spliceosome at 3.4 A resolution.</strong><br />
+Wan, R., C. Yan, R. Bai, G. Huang and Y. Shi<br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/27445308" target="_blank">Science 353(6302): 895-904.(2016)</a><br /><br /></p>
+
+<p><strong>[16] The 3.8 A structure of the U4/U6.U5 tri-snRNP: Insights into spliceosome assembly and catalysis.</strong><br />
+Wan, R., C. Yan, R. Bai, L. Wang, M. Huang, C. C. Wong and Y. Shi <br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/26743623" target="_blank">Science 351(6272): 466-475.(2016)</a><br /><br /></p>
+
+<p><strong>[17] Structure of a yeast activated spliceosome at 3.5 A resolution.</strong><br />
+Yan, C., R. Wan, R. Bai, G. Huang and Y. Shi <br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/27445306" target="_blank">Science 353(6302): 904-911.(2016)</a><br /><br /></p>
+
+<p><strong>[18] Structure of a yeast step II catalytically activated spliceosome.</strong><br />
+Yan, C., R. Wan, R. Bai, G. Huang and Y. Shi <br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/27980089" target="_blank">Science 355(6321): 149-155.(2017)</a><br /><br /></p>
+
+<p><strong>[19] Structure of a spliceosome remodelled for exon ligation.</strong><br />
+Fica, S. M., C. Oubridge, W. P. Galej, M. E. Wilkinson, X. C. Bai, A. J. Newman and K. Nagai <br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/28076345" target="_blank">Nature 542(7641): 377-380.(2017)</a><br /><br /></p>
+
+<p><strong>[20] Structure of a pre-catalytic spliceosome.</strong><br />
+Plaschka, C., P. C. Lin and K. Nagai <br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/28530653" target="_blank">Nature 546(7660): 617-621.(2017)</a><br /><br /></p>
+
+<p><strong>[21] Structure of an Intron Lariat Spliceosome from Saccharomyces cerevisiae.</strong><br />
+Wan, R., C. Yan, R. Bai, J. Lei and Y. Shi <br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/28919079" target="_blank">Cell 171(1): 120-132 e112.(2017)</a><br /><br /></p>
+
+<p><strong>[22] Structure of the yeast spliceosomal postcatalytic P complex.</strong><br />
+Liu, S., X. Li, L. Zhang, J. Jiang, R. C. Hill, Y. Cui, K. C. Hansen, Z. H. Zhou and R. Zhao <br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/29146870" target="_blank">Science 358(6368): 1278-1283.(2017)</a><br /><br /></p>
+
+<p><strong>[23] Structure of the Post-catalytic Spliceosome from Saccharomyces cerevisiae.</strong><br />
+Bai, R., C. Yan, R. Wan, J. Lei and Y. Shi <br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/29153833" target="_blank">Cell 171(7): 1589-1598 e1588.(2017)</a><br /><br /></p>
+
+<p><strong>[24] Cryo-EM Structure of a Pre-catalytic Human Spliceosome Primed for Activation.</strong><br />
+Bertram, K., D. E. Agafonov, O. Dybkov, D. Haselbach, M. N. Leelaram, C. L. Will, H. Urlaub, B. Kastner, R. Luhrmann and H. Stark<br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/28781166" target="_blank">Cell 170(4): 701-713 e711.(2017)</a><br /><br /></p>
+
+<p><strong>[25] An Atomic Structure of the Human Spliceosome.</strong><br />
+Zhang, X., C. Yan, J. Hang, L. I. Finci, J. Lei and Y. Shi <br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/28502770" target="_blank">Cell 169(5): 918-929 e914.(2017)</a><br /><br /></p>
+
+<p><strong>[26] Cryo-EM structure of a human spliceosome activated for step 2 of splicing.</strong><br />
+Bertram, K., D. E. Agafonov, W. T. Liu, O. Dybkov, C. L. Will, K. Hartmuth, H. Urlaub, B. Kastner, H. Stark and R. Luhrmann <br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/28076346" target="_blank">Nature 542(7641): 318-323.(2017)</a><br /><br /></p>
+
+<p><strong>[27]Structures of the fully assembled Saccharomyces cerevisiae spliceosome before activation.</strong><br />
+Bai, R., R. Wan, C. Yan, J. Lei and Y. Shi <br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/29794219" target="_blank">Science 360(6396): 1423-1429.(2018)</a><br /><br /></p>
+
+<p><strong>[28] Prespliceosome structure provides insights into spliceosome assembly and regulation.</strong><br />
+Plaschka, C., P. C. Lin, C. Charenton and K. Nagai <br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/29995849" target="_blank">Nature 559(7714): 419-422.(2018)</a><br /><br /></p>
+
+<p><strong>[29] Structure of a human catalytic step I spliceosome.</strong><br />
+Zhan, X., C. Yan, X. Zhang, J. Lei and Y. Shi <br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/29301961" target="_blank">Science 359(6375): 537-545.(2018)</a><br /><br />
+<strong>[30] Structure and Conformational Dynamics of the Human Spliceosomal B(act) Complex.</strong><br />
+Haselbach, D., I. Komarov, D. E. Agafonov, K. Hartmuth, B. Graf, O. Dybkov, H. Urlaub, B. Kastner, R. Luhrmann and H. Stark <br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/29361316" target="_blank">Cell 172(3): 454-464 e411.(2018)</a><br /><br />
+<strong>[31] Structures of the human pre-catalytic spliceosome and its precursor spliceosome.</strong><br />
+Zhan, X., C. Yan, X. Zhang, J. Lei and Y. Shi <br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/30315277" target="_blank">Cell Res 28(12): 1129-1140.(2018)</a><br /><br /></p>
+<p><strong>[32] Structures of the Catalytically Activated Yeast Spliceosome Reveal the Mechanism of Branching.</strong><br />
+Wan, R., R. Bai, C. Yan, J. Lei and Y. Shi <br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/30879786" target="_blank">Cell 177(2): 339-351 e313.(2019)</a><br /><br /></p>
+
+<p><strong>[33] A human postcatalytic spliceosome structure reveals essential roles of metazoan factors for exon ligation.</strong><br />
+Fica, S. M., C. Oubridge, M. E. Wilkinson, A. J. Newman and K. Nagai <br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/30705154" target="_blank">Science 363(6428): 710-714(2019)</a><br /><br /></p>
+
+<p><strong>[34] Structures of the human spliceosomes before and after release of the ligated exon.</strong><br />
+Zhang, X., X. Zhan, C. Yan, W. Zhang, D. Liu, J. Lei and Y. Shi <br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/30728453" target="_blank">Cell Res 29(4): 274-285.(2019)</a><br /><br /></p>
+<p><strong>[35] Mechanism of 5' splice site transfer for human spliceosome activation.</strong><br />
+Charenton, C., M. E. Wilkinson and K. Nagai<br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/30975767" target="_blank">Science 364(6438): 362-367. </a><br /><br /></p>
+
+
+<p><strong>[36] Structures of the Catalytically Activated Yeast Spliceosome Reveal the Mechanism of Branching.</strong><br />
+Wan, R., R. Bai, C. Yan, J. Lei and Y. Shi <br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/30879786" target="_blank">Cell 177(2): 339-351 e313.(2019)</a><br /><br /></p>
+
+<p><strong>[37] Molecular architecture of the human 17S U2 snRNP.</strong><br />
+Zhang, Z., C. L. Will, K. Bertram, O. Dybkov, K. Hartmuth, D. E. Agafonov, R. Hofele, H. Urlaub, B. Kastner, R. Luhrmann and H. Stark <br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/32494006" target="_blank">Nature 583(7815): 310-313.(2020)</a><br /><br /></p>
+
+<p><strong>[38] Mechanism of protein-guided folding of the active site U2/U6 RNA during spliceosome activation.</strong><br />
+Townsend, C., M. N. Leelaram, D. E. Agafonov, O. Dybkov, C. L. Will, K. Bertram, H. Urlaub, B. Kastner, H. Stark and R. Luhrmann <br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/33243851" target="_blank">Science 370(6523).(2020)</a><br /><br /></p>
+
+<p><strong>[39] Mechanism of spliceosome remodeling by the ATPase/helicase Prp2 and its coactivator Spp2.</strong><br />
+Bai, R., R. Wan, C. Yan, Q. Jia, J. Lei and Y. Shi <br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/33243853" target="_blank">Science 371(6525).(2021)</a><br /><br /></p>
+
+<p><strong>[40] Structural basis of branch site recognition by the human spliceosome.</strong><br />
+Tholen, J., M. Razew, F. Weis and W. P. Galej <br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/34822310" target="_blank">Science 375(6576): 50-57.(2022)</a><br /><br /></p>
+
+<p><strong>[41] Molecular Mechanisms of pre-mRNA Splicing through Structural Biology of the Spliceosome.</strong><br />
+Yan, C., R. Wan and Y. Shi <br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/30602541" target="_blank">Cold Spring Harb Perspect Biol 11(1).(2019)</a><br /><br /></p>
+
+<p><strong>[42] How Is Precursor Messenger RNA Spliced by the Spliceosome?</strong><br />
+Wan, R., R. Bai, X. Zhan and Y. Shi <br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/31815536" target="_blank">Annu Rev Biochem 89: 333-358.(2020)</a><br /><br /></p>
+
+<p><strong>[43] RNA Splicing by the Spliceosome.</strong><br />
+Wilkinson, M. E., C. Charenton and K. Nagai <br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/31794245" target="_blank">Annu Rev Biochem 89: 359-388.(2020)</a><br /><br /></p>
+
+<p><strong>[44] Mechanistic insights into precursor messenger RNA splicing by the spliceosome.</strong><br />
+Shi, Y.<br />
+<a href="https://www.ncbi.nlm.nih.gov/pubmed/28951565" target="_blank">Nat Rev Mol Cell Biol, 18, 655-670.(2017)</a><br /><br /></p>
+
+  </div>
+
+</article>
+
+      </div>
+    </div>
+
+    <div id="footer" class="panel">
+      <div class="panel-footer" style='background-color: #333333; color: #eeeeee;'>
+        <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-4">
+            
+          <p>&copy 2024 GZNL-RDC. </p>
+          <p>We are part of the <a href="https://gzlab.ac.cn">Guangzhou Laboratory</a> and <a href="http://www.rnacentre.org/">RNAcentre</a> and <a href="http://www.gzsys.org.cn/">Sun Yat-sen University</a>.</p>
+          <p>Site made with <a href="https://jekyllrb.com">Jekyll</a>;  <a href="{{ site.url }}{{ site.baseurl }}/aboutwebsite.html">copy and  modify it for your own research group</a>.</p>
+          <p>  </p>
+          <p>  </p>
+          </div>
+          
+          <div class="col-sm-4">
+          Funding:<br />
+          - <a href="https://gzlab.ac.cn">R&D Programs of Guangzhou Laboratory</a><br />
+          - <a href="http://www.most.gov.cn/">MOST IT+BT projects</a> <br />
+          - <a href="https://www.nsfc.gov.cn/">NSFC</a> <br />	  
+          <br>
+          <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+          <!--<span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;<span id="busuanzi_container_site_uv"><strong>: <a href=""><span id="busuanzi_value_site_uv"></span></strong></a> </span> &nbsp;&nbsp;
+          !--><span class="glyphicon glyphicon-eye-open"></span>&nbsp;&nbsp;<span id="busuanzi_container_site_pv">: <a href="" ><span id="busuanzi_value_site_pv"></span></a> </span>
+          </div>
+          
+          <div class="col-sm-4">
+          Contact:<br />
+          Building B2, Guangzhou National Laboratory<br />
+          96 Xingdao South Road, Guangzhou International Bio Island, <br />
+          Haizhu District, Guangzhou, Guangdong, China.<br />
+          (<a href="https://goo.gl/maps/hDLr6siEAS2Eaypt8">Maps</a>)
+          </div>
+        </div>
+        </div>
+      </div>
+      </div>
+      
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+      <script src="{{ site.url }}{{ site.baseurl }}/js/bootstrap.min.js"></script>
+
+
+  </body>
+
+</html>
