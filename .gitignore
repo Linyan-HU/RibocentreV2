@@ -1,4 +1,6 @@
 _site
+.jekyll-cache/
+.DS_Store
 .sass-cache
 .jekyll-metadata
 .jekyll-cache/Jekyll/Cache/Jekyll--Converters--Markdown/fe/67e82b92b30ca3d457de13cc70eada6cf42c12e8b4f348bb893c1acf4a8d8c
