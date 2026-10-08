@@ -10,8 +10,8 @@ title: Ribo centre
 email: rnapuzzles@gzlab.ac.cn
 description: > # this means to ignore newlines until "baseurl:"
   Ribo centre is a database of ribozymes.
-baseurl: ""
-url: ""
+baseurl: "/RibocentreV2"
+url: "https://linyan-hu.github.io"
 
 include:
   - .htaccess
@@ -60,5 +60,4 @@ kramdown:
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   enable_coderay: false
   parse_block_html: true # default for kramdown is false. This will enable using Markdown links
-
 
