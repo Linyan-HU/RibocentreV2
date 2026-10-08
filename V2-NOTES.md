@@ -28,3 +28,5 @@ V2 is a separate repository. Publishing it does not update the original producti
 ## Existing dependencies
 
 Google custom search and some scripts/embeds require third-party services. The original source has duplicate output paths for two legacy table posts and application pages, and Liquid warnings for RNA dot-bracket strings. These are unchanged by this visual revision.
+
+GitHub Pages preview: https://linyan-hu.github.io/RibocentreV2/ . This is a separate V2 repository; publishing it does not update the original production site.
