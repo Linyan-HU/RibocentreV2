@@ -1,0 +1,52 @@
+.rc-stats { scroll-margin-top: 54px; --plot-small: #0874c4; --plot-large: #70bdde; }
+html[data-theme="dark"] .rc-stats { --plot-small: #58b7fd; --plot-large: #a3daec; }
+.rc-stats .rc-stats-totals {
+  display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); margin: 0 0 20px;
+  border-block: 1px solid var(--border); padding: 15px 0; row-gap: 14px;
+}
+.rc-stats-totals div { display: flex; flex-direction: column-reverse; justify-content: end; padding: 0 20px; border-left: 1px solid var(--border); }
+.rc-stats-totals div:first-child { border: 0; padding-left: 0; }
+.rc-stats-totals dt { color: var(--textSecondary); font-size: .9rem; font-weight: 400; }
+.rc-stats-totals dd { margin: 0; color: var(--primaryHover); font-size: 1.75rem; font-weight: 700; line-height: 1.25; font-variant-numeric: tabular-nums; }
+.rc-stats-plots { display: grid; grid-template-columns: minmax(0,1.7fr) minmax(245px,1fr); gap: 16px; }
+.rc-stats-plot { min-width: 0; padding: 16px; border: 1px solid var(--border); border-radius: var(--radiusPanel); }
+.rc-stats .rc-stats-plot h3 { font-size: 1rem; margin: 0 0 12px; }
+.rc-year-scroll { overflow-x: auto; padding: 4px; }
+.rc-year-bars { display: flex; gap: 3px; }
+.rc-main .rc-stats .rc-year-bars button {
+  display: grid; flex: 1 0 34px; min-width: 0; gap: 4px; padding: 3px 0; font-size: .75rem;
+  border: 1px solid transparent; border-radius: 6px; background: transparent; cursor: pointer;
+}
+.rc-year-track { height: 95px; display: flex; flex-direction: column-reverse; align-items: center; padding: 0 1px; }
+.rc-year-bar { width: 65%; max-width: 30px; height: calc(76px * var(--fraction)); flex-shrink: 0; background: var(--plot-small); border-radius: 3px 3px 0 0; }
+.rc-year-track b { font-weight: 500; font-variant-numeric: tabular-nums; color: var(--textSecondary); }
+.rc-year-label { border-top: 1px solid var(--border); padding-top: 4px; }
+.rc-main .rc-stats button[aria-pressed="true"], .rc-main .rc-stats button[aria-pressed]:hover { border-color: var(--primary); background: var(--primarySoft); }
+.rc-size-plot { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 12px; }
+.rc-size-ring { width: 122px; height: 122px; }
+.rc-size-ring circle { pointer-events: visibleStroke; cursor: pointer; }
+.rc-stats [data-size="Small"] { --slice: var(--plot-small); }
+.rc-stats [data-size="Large"] { --slice: var(--plot-large); }
+.rc-size-ring circle { stroke: var(--slice, var(--primary)); }
+.rc-size-legend { display: grid; gap: 4px; }
+.rc-main .rc-stats .rc-size-legend button { display: flex; align-items: center; gap: 8px; padding: 5px 9px; border: 1px solid transparent; background: transparent; cursor: pointer; }
+.rc-main .rc-stats .rc-size-legend button[aria-pressed="true"], .rc-main .rc-stats .rc-size-legend button:hover { border-color: var(--primary); background: var(--primarySoft); }
+.rc-size-legend i { height: 10px; width: 10px; border-radius: 50%; background: var(--slice, var(--primary)); }
+.rc-size-legend strong { margin-left: auto; }
+.rc-stats-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 16px 0; }
+.rc-stats-status { margin-right: auto; font-variant-numeric: tabular-nums; }
+.rc-stats button:disabled { opacity: .55; }
+.rc-stats-records { border-block: 1px solid var(--border); }
+.rc-stats-records summary { padding: 12px 0; color: var(--primaryHover); font-weight: 600; cursor: pointer; }
+.rc-stats-table { max-height: 19rem; overflow: auto; margin-bottom: 12px; }
+.rc-stats-table table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: .9rem; }
+.rc-stats-table :is(td,th) { padding: 8px 12px; border-bottom: 1px solid var(--border); text-align: left; }
+.rc-stats-table thead th { position: sticky; top: 0; z-index: 1; background: var(--surfaceAlt); }
+.rc-stats .rc-stats-note { color: var(--textSecondary); font-size: var(--type-footnote-size); margin: 12px 0 0; }
+@media(max-width: 960px) { .rc-stats-plots { grid-template-columns: 1fr; } }
+@media(max-width: 650px) {
+  .rc-stats .rc-stats-totals { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .rc-stats-totals div:nth-child(odd) { border: 0; padding-left: 0; }
+  .rc-stats-status { flex-basis: 100%; }
+  .rc-stats-table table { min-width: 610px; }
+}

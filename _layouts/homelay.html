@@ -1,10 +1,56 @@
 ---
 layout: default
 ---
-
-  <div id="homeid" class="col-sm-8">
-	{{ content }}
+<div class="rc-landing">
+  <section class="rc-lead" aria-labelledby="lead-title">
+    <div class="rc-lead-copy">
+      <h2 id="lead-title">Explore natural ribozymes</h2>
+      <p>Ribozymes are RNA molecules that catalyse reactions ranging from RNA cleavage and splicing to peptide bond formation. Ribocentre connects each family’s sequences and structures with its catalytic mechanism and the studies behind it.</p>
+      <a class="rc-action" href="{{ '/ribozyme/' | relative_url }}">Browse ribozyme families <span class="rc-icon rc-i-arrow-right" aria-hidden="true"></span></a>
+    </div>
+    <section class="rc-specimens" aria-labelledby="specimen-title">
+      <h3 id="specimen-title">Representative structures</h3>
+      <div class="rc-plates">
+        {% for item in site.data.featured_ribozymes %}
+        <figure class="rc-plate">
+          <img src="{{ '/images/homepic/' | append: item.pdb | append: '.png' | relative_url }}" alt="Molecular structure of {{ item.name }}" {% unless forloop.first %}loading="lazy"{% endunless %}>
+          <figcaption>
+            <a class="rc-family-link" href="{{ '/docs/' | append: item.entry | append: '.html' | relative_url }}">{{ item.name }}</a>
+            <a class="rc-pdb-link" href="https://www.rcsb.org/structure/{{ item.pdb }}">PDB {{ item.pdb }} <span class="rc-icon rc-i-arrow-up-right" aria-hidden="true"></span></a>
+          </figcaption>
+        </figure>
+        {% endfor %}
+      </div>
+      <div class="rc-plate-controls" hidden>
+        <button type="button" data-step="-1" aria-label="Previous structure"><span class="rc-icon rc-i-arrow-left" aria-hidden="true"></span></button>
+        <span class="rc-plate-counter" aria-live="polite" aria-atomic="true"></span>
+        <button type="button" data-step="1" aria-label="Next structure"><span class="rc-icon rc-i-arrow-right" aria-hidden="true"></span></button>
+      </div>
+    </section>
+  </section>
+  <section class="rc-collections" aria-labelledby="collections-title">
+    <h2 id="collections-title">Browse by data type</h2>
+    <div class="rc-collection-grid">
+      <a href="{{ '/sequence/' | relative_url }}"><strong>Sequences</strong><span>Find Rfam accessions and FASTA downloads.</span></a>
+      <a href="{{ '/structure/' | relative_url }}"><strong>Structures</strong><span>Look up experimental structures by PDB ID.</span></a>
+      <a href="{{ '/catalysis/' | relative_url }}"><strong>Catalysis</strong><span>Explore reactions and mechanisms by ribozyme family.</span></a>
+    </div>
+  </section>
+  {% include family-statistics.html %}
+  <div class="rc-home-columns">
+    <div class="rc-reference-column">
+      <section class="rc-paper-panel" aria-labelledby="guide-title">
+        <h2 id="guide-title">Ribozyme background</h2>
+        <p class="rc-source-note">Adapted from <a href="https://en.wikipedia.org/wiki/Ribozyme">Wikipedia</a>. References accompany each topic.</p>
+        {{ content }}
+      </section>
+      <section class="rc-paper-panel rc-cite" aria-labelledby="citation-title">
+        <h2 id="citation-title">Cite Ribocentre</h2>
+        <a href="https://doi.org/10.1093/nar/gkac840"><strong>Ribocentre: a database of ribozymes</strong></a>
+        <p>Jie Deng, Yaohuang Shi, Xuemei Peng, Yuanlin He, Xiaoxue Chen, Mengxiao Li, Xiaowei Lin, Wenjian Liao, Yuanyin Huang, Taijiao Jiang, David M.J. Lilley, Zhichao Miao, and Lin Huang</p>
+        <p><i>Nucleic Acids Research</i> · <a href="https://doi.org/10.1093/nar/gkac840">10.1093/nar/gkac840</a></p>
+      </section>
+    </div>
+    <aside class="rc-reference-column" aria-label="Database news and resources">{% include news.html %}</aside>
   </div>
-  <div id="newsid" class="col-sm-4" >
-	{% include news.html %}
-  </div>
+</div>

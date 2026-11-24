@@ -16,9 +16,9 @@ permalink: /application/
 To establish RNA aptamers with high stability and expression levels, Jaffrey's group designed the Tornado (twister-optimized RNA for durable overexpression) expression system for rapid RNA circularization. They use a P3 twister U2A ribozyme and a P1 twister ribozyme to generate RNAs of interest containing a 5' hydroxyl and 2',3'-cyclic phosphate. Then the 5' and 3' ends would become substrates for RtcB-mediated ligation.Finally, the RNAs of interest would be circularized.
 
 <img src="https://www.ribocentre.org/images/ApplyPic/twister.png" alt="drawing" style="weight:450px;height:600px;display:block;margin:0 auto;"><br>
-<a href="https://www.ribocentre.org/downloads/Twister.pdf" target="_blank" download="Appli-Twister.pdf"><button class="btn btn-secondary"><span class="glyphicon glyphicon-download-alt"></span>&nbsp;&nbsp;Download Poster</button></a><br><br>
+<a href="https://www.ribocentre.org/downloads/Twister.pdf" target="_blank" download="Appli-Twister.pdf"><button class="btn btn-secondary"><span class="rc-icon rc-i-download" aria-hidden="true"></span>&nbsp;&nbsp;Download Poster</button></a><br><br>
 <img src="https://www.ribocentre.org/images/ApplyPic/twister-ribozyme.png" alt="drawing" style="weight:450px;height:460px;display:block;margin:0 auto;"><br>
-<a href="https://www.ribocentre.org/downloads/twister-ribozyme-application.pdf" target="_blank" download="Appli-Ribozyme.pdf"><button class="btn btn-secondary"><span class="glyphicon glyphicon-download-alt"></span>&nbsp;&nbsp;Download Poster</button></a><br><br>
+<a href="https://www.ribocentre.org/downloads/twister-ribozyme-application.pdf" target="_blank" download="Appli-Ribozyme.pdf"><button class="btn btn-secondary"><span class="rc-icon rc-i-download" aria-hidden="true"></span>&nbsp;&nbsp;Download Poster</button></a><br><br>
 
 
 > HDV
@@ -26,10 +26,10 @@ To establish RNA aptamers with high stability and expression levels, Jaffrey's g
 Schematic diagram for simple and effective generating in vitro transcripts with homogenous 5' ends and 3' ends. As show in this diagram, we use hammerhead and HDV ribozymes to produce homogenous RNA with any 5'- and 3'- terminal sequence.
 
 <img src="https://www.ribocentre.org/images/ApplyPic/HDV.png" alt="drawing" style="weight:450px;height:600px;display:block;margin:0 auto;"><br>
-<a href="https://www.ribocentre.org/downloads/HDV.pdf" target="_blank" download="Appli-HDV.pdf"><button class="btn btn-secondary"><span class="glyphicon glyphicon-download-alt"></span>&nbsp;&nbsp;Download Poster</button></a><br><br>
+<a href="https://www.ribocentre.org/downloads/HDV.pdf" target="_blank" download="Appli-HDV.pdf"><button class="btn btn-secondary"><span class="rc-icon rc-i-download" aria-hidden="true"></span>&nbsp;&nbsp;Download Poster</button></a><br><br>
 
 <img src="https://www.ribocentre.org/images/ApplyPic/hammerhead.png" alt="drawing" style="weight:350px;height:300px;display:block;margin:0 auto;"><br>
-<a href="https://www.ribocentre.org/downloads/Hammerhead-application.pdf" target="_blank" download="Appli-Hammerhead.pdf"><button class="btn btn-secondary"><span class="glyphicon glyphicon-download-alt"></span>&nbsp;&nbsp;Download Poster</button></a><br><br>
+<a href="https://www.ribocentre.org/downloads/Hammerhead-application.pdf" target="_blank" download="Appli-Hammerhead.pdf"><button class="btn btn-secondary"><span class="rc-icon rc-i-download" aria-hidden="true"></span>&nbsp;&nbsp;Download Poster</button></a><br><br>
 
 
 

@@ -7,7 +7,7 @@ permalink: /sequence/
 ---
 
 ## Sequence
-<strong> <font size=4>Shows the sequence of Ribozyme (Rfam ID for fasta file download). We keep the U in the partial sequence because it is consistent with the sequence information in the fasta file. ( We provide the script could change T into U on the page).<strong> <a href="https://www.ribocentre.org/downloads/sequence-T2U.ipynb" target="_blank" download="sequence-T2U.ipynb"><button class="btn btn-secondary"><span class="glyphicon glyphicon-download-alt"></span>&nbsp;&nbsp;Download Script</button></a><br><br>
+<strong> <font size=4>Shows the sequence of Ribozyme (Rfam ID for fasta file download). We keep the U in the partial sequence because it is consistent with the sequence information in the fasta file. ( We provide the script could change T into U on the page).</font></strong> <a href="https://www.ribocentre.org/downloads/sequence-T2U.ipynb" target="_blank" download="sequence-T2U.ipynb"><button class="btn btn-secondary"><span class="rc-icon rc-i-download" aria-hidden="true"></span>&nbsp;&nbsp;Download Script</button></a><br><br>
 
 <html>
   <head>
@@ -21,6 +21,6 @@ permalink: /sequence/
               {"description": "Group II self-splicing intron", "urs": "", "sequence": "AGGAGCCGTGCGAGATGAAAGTCTCATGCACGGTTTTGCATGATAGAAAGAAGCGAGGAATCCTCTTTTCGACTCTGAC"}
             ]'
             rfam="true"
-    />
+    ></rnacentral-sequence-search>
   <script type="text/javascript" src="https://rnacentral.github.io/rnacentral-sequence-search-embed/dist/RNAcentral-sequence-search.js"></script></body>
 </html>

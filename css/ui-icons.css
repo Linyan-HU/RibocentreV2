@@ -1,0 +1,108 @@
+/* Original Bootstrap Icons 1.11.3 (MIT), bundled in images/ui/bootstrap-icons.
+   Masks let the unmodified SVG files follow the surrounding text color. */
+.rc-icon { display: inline-block; line-height: 1; vertical-align: -.125em; }
+.rc-icon::before,
+.rc-collection-grid > a::after,
+.rc-main details > summary::before,
+.rc-main .rc-catalog-tools label:has(select)::after,
+.rc-main .timeline > li > .timeline-panel::before,
+.rc-main table.dataTable thead th[class*="sorting"]::after,
+#main .tooltip .tooltip-arrow {
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  background-color: currentColor;
+  -webkit-mask: var(--rc-icon) center / contain no-repeat;
+  mask: var(--rc-icon) center / contain no-repeat;
+}
+.rc-search button { display: grid; place-content: center; }
+.rc-search .rc-icon { font-size: 20px; }
+.rc-plate-controls .rc-icon { font-size: 16px; }
+.rc-collection-grid > a::after {
+  --rc-icon: url("../images/ui/bootstrap-icons/arrow-right.svg");
+  position: absolute; top: 16px; right: 16px;
+}
+.rc-main details > summary { list-style: none; }
+.rc-main details > summary::-webkit-details-marker { display: none; }
+.rc-main details > summary::before {
+  --rc-icon: url("../images/ui/bootstrap-icons/chevron-right.svg");
+  width: .85em; height: .85em; margin-right: .5em; vertical-align: -.03em;
+}
+.rc-main details[open] > summary::before { --rc-icon: url("../images/ui/bootstrap-icons/chevron-down.svg"); }
+.rc-main .carousel-control .rc-icon {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-size: 24px;
+}
+.rc-main .rc-catalog-tools label:has(select) { position: relative; }
+.rc-main .rc-catalog-tools select { appearance: none; padding-right: 32px; }
+.rc-main .rc-catalog-tools label:has(select)::after {
+  --rc-icon: url("../images/ui/bootstrap-icons/chevron-down.svg");
+  position: absolute; bottom: 13px; right: 11px; pointer-events: none;
+}
+.rc-foldbridge input[type="search"]::-webkit-search-cancel-button {
+  appearance: none; width: 1em; height: 1em; cursor: pointer; background-color: currentColor;
+  -webkit-mask: url("../images/ui/bootstrap-icons/x-lg.svg") center / contain no-repeat;
+  mask: url("../images/ui/bootstrap-icons/x-lg.svg") center / contain no-repeat;
+}
+
+/* Details pages carry legacy timeline CSS inside the article. */
+.rc-main .timeline > li > .timeline-panel::before {
+  --rc-icon: url("../images/ui/bootstrap-icons/caret-right-fill.svg");
+  position: absolute; top: 18px; right: -14px; left: auto;
+  width: 15px; height: 15px; border: 0; color: var(--primary); pointer-events: none;
+}
+.rc-main .timeline > li.timeline-inverted > .timeline-panel::before {
+  --rc-icon: url("../images/ui/bootstrap-icons/caret-left-fill.svg"); right: auto; left: -14px; border: 0;
+}
+.rc-main .timeline > li > .timeline-panel::after { content: none; display: none; }
+@media (max-width: 760px) {
+  .rc-main .timeline > li > .timeline-panel::before {
+    --rc-icon: url("../images/ui/bootstrap-icons/caret-left-fill.svg"); right: auto; left: -14px;
+  }
+}
+
+/* DataTables changes these classes when a column is sorted. */
+.rc-main table.dataTable thead th[class*="sorting"] {
+  position: relative; padding-right: 32px !important; background-image: none !important;
+}
+.rc-main table.dataTable thead th[class*="sorting"]::before { content: none !important; }
+.rc-main table.dataTable thead th[class*="sorting"]::after {
+  --rc-icon: url("../images/ui/bootstrap-icons/arrow-down-up.svg");
+  content: "" !important; position: absolute; top: 50%; bottom: auto; right: 10px;
+  width: 13px; height: 13px; transform: translateY(-50%); opacity: .7; pointer-events: none;
+}
+.rc-main table.dataTable thead th.sorting_asc::after { --rc-icon: url("../images/ui/bootstrap-icons/chevron-up.svg"); opacity: 1; }
+.rc-main table.dataTable thead th.sorting_desc::after { --rc-icon: url("../images/ui/bootstrap-icons/chevron-down.svg"); opacity: 1; }
+.rc-main table.dataTable thead th.sorting_disabled::after { content: none !important; }
+.rc-main table.dataTable thead th.sorting_asc_disabled::after { --rc-icon: url("../images/ui/bootstrap-icons/chevron-down.svg"); }
+.rc-main table.dataTable thead th.sorting_desc_disabled::after { --rc-icon: url("../images/ui/bootstrap-icons/chevron-up.svg"); }
+
+/* Forna is served as its own HTML document. Retain its button and modal bindings. */
+#main .rc-icon.input-group-addon { display: table-cell; }
+#main .dropup .rc-i-chevron-down { --rc-icon: url("../images/ui/bootstrap-icons/chevron-up.svg"); }
+#main .tooltip .tooltip-arrow { border: 0; width: 10px; height: 6px; color: #000; }
+#main .tooltip.top .tooltip-arrow { --rc-icon: url("../images/ui/bootstrap-icons/caret-down-fill.svg"); }
+#main .tooltip.bottom .tooltip-arrow { --rc-icon: url("../images/ui/bootstrap-icons/caret-up-fill.svg"); }
+#main .tooltip.left .tooltip-arrow, #main .tooltip.right .tooltip-arrow { width: 6px; height: 10px; }
+#main .tooltip.left .tooltip-arrow { --rc-icon: url("../images/ui/bootstrap-icons/caret-right-fill.svg"); }
+#main .tooltip.right .tooltip-arrow { --rc-icon: url("../images/ui/bootstrap-icons/caret-left-fill.svg"); }
+.rc-i-arrow-right { --rc-icon: url("../images/ui/bootstrap-icons/arrow-right.svg"); }
+.rc-i-arrow-left { --rc-icon: url("../images/ui/bootstrap-icons/arrow-left.svg"); }
+.rc-i-arrow-up-right { --rc-icon: url("../images/ui/bootstrap-icons/arrow-up-right.svg"); }
+.rc-i-search { --rc-icon: url("../images/ui/bootstrap-icons/search.svg"); }
+.rc-i-chevron-left { --rc-icon: url("../images/ui/bootstrap-icons/chevron-left.svg"); }
+.rc-i-chevron-right { --rc-icon: url("../images/ui/bootstrap-icons/chevron-right.svg"); }
+.rc-i-chevron-down { --rc-icon: url("../images/ui/bootstrap-icons/chevron-down.svg"); }
+.rc-i-chevron-double-left { --rc-icon: url("../images/ui/bootstrap-icons/chevron-double-left.svg"); }
+.rc-i-chevron-double-right { --rc-icon: url("../images/ui/bootstrap-icons/chevron-double-right.svg"); }
+.rc-i-three-dots { --rc-icon: url("../images/ui/bootstrap-icons/three-dots.svg"); }
+.rc-i-download { --rc-icon: url("../images/ui/bootstrap-icons/download.svg"); }
+.rc-i-megaphone { --rc-icon: url("../images/ui/bootstrap-icons/megaphone.svg"); }
+.rc-i-eye { --rc-icon: url("../images/ui/bootstrap-icons/eye.svg"); }
+.rc-i-x-lg { --rc-icon: url("../images/ui/bootstrap-icons/x-lg.svg"); }
+.rc-i-arrow-clockwise { --rc-icon: url("../images/ui/bootstrap-icons/arrow-clockwise.svg"); }
+.rc-i-share { --rc-icon: url("../images/ui/bootstrap-icons/share.svg"); }
+.rc-i-question-circle { --rc-icon: url("../images/ui/bootstrap-icons/question-circle.svg"); }
+.rc-i-crosshair { --rc-icon: url("../images/ui/bootstrap-icons/crosshair.svg"); }
+.rc-i-gear { --rc-icon: url("../images/ui/bootstrap-icons/gear.svg"); }
+.rc-i-arrows-fullscreen { --rc-icon: url("../images/ui/bootstrap-icons/arrows-fullscreen.svg"); }

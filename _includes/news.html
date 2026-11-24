@@ -1,55 +1,17 @@
-
-
- <div class="well" style="margin-top:24px;" >
-    <h4>News: </h4>
-    
-    {% for article in site.data.news limit:9 %}
-    <p>{{ article.date }}<br>{{ article.headline | markdownify}}</p>
+<section class="rc-paper-panel rc-news" aria-labelledby="news-title">
+  <h2 id="news-title">Database news</h2>
+  <ul>
+    {% assign updates = site.data.news | where_exp: "item", "item.headline" %}
+    {% for item in updates limit:3 %}
+    <li><small>{{ item.date | strip_html | remove: '&nbsp;' | strip }}</small>{{ item.headline | markdownify }}</li>
     {% endfor %}
-    
-    <h4><a href="{{ site.url }}{{ site.baseurl }}/allnews.html">... see all News</a></h4>
-    
-        </div>
-
-        <div class="well">
-          <h4>Visualization: </h4>
-      
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <head>
-      </head>
-      <style type="text/css">
-      </style>
-        
-        <p>&nbsp;
-          <a href="https://www.ribocentre.org/docs/twister.html"><img src="https://www.ribocentre.org/images/homepic/4OJI.png" width="" height="100px"></a>&nbsp;&nbsp;
-          <a href="https://www.ribocentre.org/docs/VS-ribozyme.html"><img src="https://www.ribocentre.org/images/homepic/4R4V.png" width="" height="100px"></a><br>
-          <a href="https://www.ribocentre.org/docs/hammer.html"><img src="https://www.ribocentre.org/images/homepic/3ZD5.png" width="" height="100px"></a>
-          <a href="https://www.ribocentre.org/docs/groupII.html"><img src="https://www.ribocentre.org/images/homepic/4FAR.png" width="" height="100px"></a><br>
-          <a href="https://www.ribocentre.org/docs/glms.html"><img src="https://www.ribocentre.org/images/homepic/2HO7.png" width="" height="100px"></a>
-          <a href="https://www.ribocentre.org/docs/HDV.html"><img src="https://www.ribocentre.org/images/homepic/1DRZ.png" width="" height="100px"></a><br>
-          
-      </p> (Representative Data. Full list found at <a href="https://www.ribocentre.org/ribozyme/"><strong>here</strong></a>)</div>
-      <div class="well">
-        <h4>Submit/Feedback : </h4>
-        <a href="https://www.ribocentre.org/Helps" target="_blank"><button>Clink here</button></a><br>
-
-      </div>
-
-
-        <div class="well">
-          <h4>Related websites:</h4>
-      
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <head>
-      </head>
-      <style type="text/css">
-      </style>
-        
-        <p>&nbsp;
-          <a href="https://riboswitch.ribocentre.org/"><img src="/images/riboswitch.svg" width="" height="50px"></a>
-          <a href="https://aptamer.ribocentre.org/"><img src="/images/riboaptamer.svg" width="" height="50px"></a>
-          
-          
-      </p></div>
-      
-    
+  </ul>
+  <a href="{{ '/allnews.html' | relative_url }}">All news <span class="rc-icon rc-i-arrow-right" aria-hidden="true"></span></a>
+</section>
+<section class="rc-paper-panel rc-resources" aria-label="Community resources">
+  <h2>Contribute</h2>
+  <p><a href="{{ '/Helps/' | relative_url }}">Submit a ribozyme or send feedback <span class="rc-icon rc-i-arrow-right" aria-hidden="true"></span></a></p>
+  <h3>Related databases</h3>
+  <p><a href="https://riboswitch.ribocentre.org/">Ribocentre-switch</a> covers regulatory RNA elements that bind ligands to control gene expression.</p>
+  <p><a href="https://aptamer.ribocentre.org/">Ribocentre-aptamer</a> collects RNA aptamers.</p>
+</section>

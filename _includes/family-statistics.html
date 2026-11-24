@@ -1,0 +1,40 @@
+{% assign stats = site.data.ribozyme_statistics %}
+<section class="rc-paper-panel rc-stats" id="statistics" aria-labelledby="stats-title">
+  <h2 id="stats-title">Database statistics</h2>
+  <dl class="rc-stats-totals">
+    <div><dt>Ribozyme families</dt><dd data-total="families">{{ stats.records.size }}</dd></div>
+    <div><dt>Rfam accessions</dt><dd data-total="rfam">{{ stats.rfam }}</dd></div>
+    <div><dt>PDB structures</dt><dd data-total="pdb">{{ stats.pdb }}</dd></div>
+    <div><dt>Publication listings</dt><dd data-total="publications">{{ stats.publications }}</dd></div>
+  </dl>
+  <div class="rc-stats-interactive" hidden>
+    <p>Select one or more years or size classes to filter the counts and family records.</p>
+    <div class="rc-stats-plots">
+      <section class="rc-stats-plot"><h3>Family discovery year</h3><div class="rc-year-scroll" role="group" aria-label="Filter by discovery year"><div class="rc-year-bars"></div></div></section>
+      <section class="rc-stats-plot"><h3>Ribozyme size class</h3><div class="rc-size-plot">
+        <svg viewBox="0 0 120 120" class="rc-size-ring" aria-hidden="true"></svg>
+        <div class="rc-size-legend" role="group" aria-label="Filter by size class"></div>
+      </div></section>
+    </div>
+    <div class="rc-stats-actions">
+      <span class="rc-stats-status" role="status"></span>
+      <button type="button" data-action="reset">Reset filters</button>
+      <button type="button" data-action="export">Export CSV</button>
+    </div>
+  </div>
+  <details class="rc-stats-records">
+    <summary>Family records</summary>
+    <div class="rc-stats-table" role="region" aria-label="Family records table" tabindex="0">
+      <table>
+        <thead><tr><th scope="col">Ribozyme family</th><th scope="col">Discovery year</th><th scope="col">Size class</th><th scope="col">Rfam accessions</th><th scope="col">PDB structures</th><th scope="col">Publication listings</th></tr></thead>
+        <tbody>{% for family in stats.records %}
+          <tr data-rfam="{{ family.rfam | join: ' ' }}" data-pdb="{{ family.pdb | join: ' ' }}">
+            <td><a href="{{ family.path | relative_url }}">{{ family.name | escape }}</a></td><td>{{ family.year | escape }}</td><td>{{ family.size | escape }}</td><td>{{ family.rfam.size }}</td><td>{{ family.pdb.size }}</td><td>{{ family.publications }}</td>
+          </tr>{% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </details>
+  <p class="rc-stats-note">Counts use the <a href="{{ '/ribozyme/' | relative_url }}">family catalogue</a>, <a href="{{ '/structure/' | relative_url }}">structure index</a> and <a href="{{ '/publications/' | relative_url }}">publication index</a>. Rfam and PDB accessions are counted once per selection. Each publication listing is one index row.</p>
+</section>
+<script defer src="{{ '/js/family-statistics.js' | relative_url }}?v=aa7f3072aa"></script>

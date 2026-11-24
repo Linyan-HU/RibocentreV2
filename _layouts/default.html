@@ -1,21 +1,13 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
   {% include head.html %}
-
-  <body class="fb-v2">
-
-    <header class="fb-header">{% include header.html %}</header>
-
-    <div class="container-fluid fb-content">
-      <div class="row">
-        {{ content }}
-      </div>
-    </div>
-
+  <body class="rc-foldbridge{% if page.url == '/' %} rc-home{% endif %}">
+    <a class="rc-skip" href="#main-content">Skip to content</a>
+    {% include header.html %}
+    <main id="main-content" class="rc-main">
+      <div class="rc-content-row">{{ content }}</div>
+    </main>
     {% include footer.html %}
-
-    <script src="{{ site.baseurl }}/js/foldbridge-v2.js" defer></script>
+    <script src="{{ '/js/foldbridge-style.js' | relative_url }}" defer></script>
   </body>
-
 </html>

@@ -30,6 +30,7 @@
   <script type="text/javascript" src="/js/forna/FileSaver.min.js"></script>
   <!-- saveSvgAsPng.js -->
   <script type="text/javascript" src="/js/forna/saveSvgAsPng.js"></script>
+  <link rel="stylesheet" href="../css/ui-icons.css">
 </head>
 <body data-new-gr-c-s-check-loaded="14.1058.0" data-gr-ext-installed="">
 <div id="main">
@@ -38,7 +39,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+        <button type="button" class="close" data-dismiss="modal"><span class="rc-icon rc-i-x-lg" aria-hidden="true"></span><span class="sr-only">Close</span></button>
           <h4 class="modal-title">Add RNA Molecule</h4>
         </div>
         <div class="modal-body">
@@ -46,7 +47,7 @@
             <div class="form-group">
               <label for="Input">Sequence and Structure</label>
               <div class="inner-addon right-addon">
-                  <span class="glyphicon glyphicon-remove inner-item inner-item-button" aria-hidden="true" data-bind="click: function() { input(&#39;&#39;); }"></span>
+                  <span class="rc-icon rc-i-x-lg inner-item inner-item-button" aria-hidden="true" data-bind="click: function() { input(&#39;&#39;); }"></span>
                   <textarea type="text" class="form-control" id="Input" placeholder="" rows="2" data-bind="value: input" autofocus="" required=""></textarea>
                   <span class="inner-item inner-item-bottom" data-bind="text: cursorPosition"></span>
               </div>
@@ -54,7 +55,7 @@
             <div class="form-group">
               <label for="inputFastaFile">And/Or load from File</label>
               <div class="inner-addon left-addon" style="max-width:100%; overflow-x: hidden;">
-                  <span class="glyphicon glyphicon-remove inner-item inner-item-button" aria-hidden="true" data-bind="click: function() { $(&#39;#inputFastaFile&#39;).val(&#39;&#39;); inputFile(null); }, visible: inputFile" style="display: none;"></span>
+                  <span class="rc-icon rc-i-x-lg inner-item inner-item-button" aria-hidden="true" data-bind="click: function() { $(&#39;#inputFastaFile&#39;).val(&#39;&#39;); inputFile(null); }, visible: inputFile" style="display: none;"></span>
                   <input type="file" id="inputFastaFile" data-bind="event: { change: function() { inputFile($element.files[0]) }}">
                    <p class="help-block">Instead or in addition you may select a Fasta file.</p>
                    <input type="checkbox" value="circularizeExternal" data-bind="checked: circularizeExternal"><span style="padding-left: 3px">Circularize Exterior Loop</span>
@@ -76,12 +77,12 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+        <button type="button" class="close" data-dismiss="modal"><span class="rc-icon rc-i-x-lg" aria-hidden="true"></span><span class="sr-only">Close</span></button>
           <h4 class="modal-title">Add Molecule from API</h4>
         </div>
         <div class="modal-body">
           <form role="form">
-            <span class="glyphicon glyphicon-refresh glyphicon-refresh-animate" aria-hidden="true" data-bind="visible: inputError().length === 0"></span>
+            <span class="rc-icon rc-i-arrow-clockwise glyphicon-refresh-animate" aria-hidden="true" data-bind="visible: inputError().length === 0"></span>
             <span data-bind="visible: inputError().length === 0">&nbsp;&nbsp;Please wait while we are
             getting your molecule...</span>
             <div class="alert alert-danger" role="alert" data-bind="visible: inputError().length &gt; 0, html: inputError" id="inputError" style="display: none;"></div>
@@ -99,7 +100,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+        <button type="button" class="close" data-dismiss="modal"><span class="rc-icon rc-i-x-lg" aria-hidden="true"></span><span class="sr-only">Close</span></button>
           <h4 class="modal-title">Add Molecule from JSON</h4>
         </div>
         <div class="modal-body">
@@ -107,7 +108,7 @@
             <div class="form-group">
               <label for="JSONInput">JSON Text</label>
                   <div class="inner-addon right-addon">
-                    <span class="glyphicon glyphicon-remove inner-item inner-item-button" aria-hidden="true" data-bind="click: function() { input(&#39;&#39;); }"></span>
+                    <span class="rc-icon rc-i-x-lg inner-item inner-item-button" aria-hidden="true" data-bind="click: function() { input(&#39;&#39;); }"></span>
                     <textarea type="text" class="form-control" id="JSONInput" placeholder="" rows="2" data-bind="value: input" autofocus="" required=""></textarea>
                     <span class="inner-item inner-item-bottom" data-bind="text: cursorPosition"></span>
                   </div>
@@ -115,7 +116,7 @@
             <div class="form-group">
               <label for="inputJSONFile">And/Or load from File</label>
               <div class="inner-addon left-addon" style="max-width:100%; overflow-x: hidden;">
-                  <span class="glyphicon glyphicon-remove inner-item inner-item-button" aria-hidden="true" data-bind="click: function() { $(&#39;#inputJSONFile&#39;).val(&#39;&#39;); inputFile(null); }, visible: inputFile" style="display: none;"></span>
+                  <span class="rc-icon rc-i-x-lg inner-item inner-item-button" aria-hidden="true" data-bind="click: function() { $(&#39;#inputJSONFile&#39;).val(&#39;&#39;); inputFile(null); }, visible: inputFile" style="display: none;"></span>
                   <input type="file" id="inputJSONFile" data-bind="event: { change: function() { inputFile($element.files[0]) }}">
                    <p class="help-block">Instead or in addition you may select a JSON file.</p>
               </div>
@@ -136,7 +137,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+        <button type="button" class="close" data-dismiss="modal"><span class="rc-icon rc-i-x-lg" aria-hidden="true"></span><span class="sr-only">Close</span></button>
           <h4 class="modal-title">Add PDB File</h4>
         </div>
         <div class="modal-body">
@@ -144,7 +145,7 @@
             <div class="form-group">
               <label for="inputPDBFile">File Input</label>
               <div class="inner-addon left-addon" style="max-width:100%; overflow-x: hidden;">
-                  <span class="glyphicon glyphicon-remove inner-item inner-item-button" aria-hidden="true" data-bind="click: function() { $(&#39;#inputPDBFile&#39;).val(&#39;&#39;); inputFile(null); }, visible: inputFile" style="display: none;"></span>
+                  <span class="rc-icon rc-i-x-lg inner-item inner-item-button" aria-hidden="true" data-bind="click: function() { $(&#39;#inputPDBFile&#39;).val(&#39;&#39;); inputFile(null); }, visible: inputFile" style="display: none;"></span>
                   <input type="file" id="inputPDBFile" data-bind="event: { change: function() { inputFile($element.files[0]); parsePDB(); }}">
                    <p class="help-block">Please select a PDB file to extract the secondary structure from.</p>
                    <div data-bind="visible: inputFile() !== null" id="compoundList" style="display: none;">
@@ -153,7 +154,7 @@
                          <button type="button" class="btn btn-default" data-bind="click: selectAll(false)">None</button>
                        </div>
                        <label for="compoundList">Select compounds to display:</label>
-                       <span class="glyphicon glyphicon-refresh glyphicon-refresh-animate" aria-hidden="true" data-bind="visible: compounds().length === 0"></span>
+                       <span class="rc-icon rc-i-arrow-clockwise glyphicon-refresh-animate" aria-hidden="true" data-bind="visible: compounds().length === 0"></span>
                        <ul class="list-group" data-bind="foreach: compounds" style="word-wrap: break-word; margin: 16px;"></ul>
                        <div class="btn-group btn-group-sm pull-right" role="group" aria-label="..." data-bind="visible: compounds().length &gt; 0" style="display: none;">
                          <button type="button" class="btn btn-default" data-bind="click: selectAll(true)">All</button>
@@ -179,7 +180,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+        <button type="button" class="close" data-dismiss="modal"><span class="rc-icon rc-i-x-lg" aria-hidden="true"></span><span class="sr-only">Close</span></button>
           <h4 class="modal-title">Add MMCIF File</h4>
         </div>
         <div class="modal-body">
@@ -187,7 +188,7 @@
             <div class="form-group">
               <label for="Input">File Input</label>
               <div class="inner-addon left-addon" style="max-width:100%; overflow-x: hidden;">
-                  <span class="glyphicon glyphicon-remove button" aria-hidden="true" data-bind="click: function() { $(&#39;#inputMMCIFFile&#39;).val(&#39;&#39;); inputFile(null); }, visible: inputFile" style="display: none;"></span>
+                  <span class="rc-icon rc-i-x-lg button" aria-hidden="true" data-bind="click: function() { $(&#39;#inputMMCIFFile&#39;).val(&#39;&#39;); inputFile(null); }, visible: inputFile" style="display: none;"></span>
                   <input type="file" id="inputMMCIFFile" data-bind="event: { change: function() { inputFile($element.files[0]) }}">
                    <p class="help-block">Please select a MMCIF file to extract the secondary structure from.</p>
               </div>
@@ -209,7 +210,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+        <button type="button" class="close" data-dismiss="modal"><span class="rc-icon rc-i-x-lg" aria-hidden="true"></span><span class="sr-only">Close</span></button>
           <h4 class="modal-title">Edit Color Scheme</h4>
         </div>
         <div class="modal-body">
@@ -234,18 +235,18 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+        <button type="button" class="close" data-dismiss="modal"><span class="rc-icon rc-i-x-lg" aria-hidden="true"></span><span class="sr-only">Close</span></button>
           <h4 class="modal-title">Share a Link of your View</h4>
         </div>
         <div class="modal-body" style="min-height: 150px;">
           <form role="form">
-            <span class="glyphicon glyphicon-refresh glyphicon-refresh-animate" aria-hidden="true" data-bind="visible: (inputError().length === 0 &amp;&amp; url().length === 0)"></span>
+            <span class="rc-icon rc-i-arrow-clockwise glyphicon-refresh-animate" aria-hidden="true" data-bind="visible: (inputError().length === 0 &amp;&amp; url().length === 0)"></span>
             <span data-bind="visible: (inputError().length === 0 &amp;&amp; url().length === 0)">&nbsp;&nbsp;We are generating your link...</span>
             <div data-bind="visible: url().length !== 0" style="display: none;">
                 <label>Using this link you can return to the current state. This link will be valid for at about 6 weeks.</label>
                 <div class="input-group input-group-lg">
                     <input id="shareURL" type="text" class="form-control" placeholder="..." aria-describedby="url" data-bind="value: url" onclick="this.select();" readonly="" data-toggle="tooltip" data-placement="bottom" title="" data-delay="{&quot;show&quot;:&quot;100&quot;, &quot;hide&quot;:&quot;50&quot;}" data-original-title="Ctrl + C">
-                    <span class="input-group-addon glyphicon glyphicon-share-alt" id="url"></span>
+                    <span class="input-group-addon rc-icon rc-i-share" id="url"></span>
                 </div>
             </div>
             <div class="alert alert-danger" role="alert" data-bind="visible: inputError().length &gt; 0, html: inputError" id="inputError" style="display: none;"></div>
@@ -263,7 +264,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal"> <span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+            <button type="button" class="close" data-dismiss="modal"> <span class="rc-icon rc-i-x-lg" aria-hidden="true"></span><span class="sr-only">Close</span></button>
           <h4 class="modal-title">About forna</h4>
         </div>
         <div class="modal-body">
@@ -430,7 +431,7 @@
         <div class="btn-group">
             <button class="btn btn-primary" data-bind="click: showAdd">Add Molecule</button>
             <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                <span class="caret"></span>
+                <span class="rc-icon rc-i-chevron-down" aria-hidden="true"></span>
                 <span class="sr-only">Toggle Dropdown</span>
             </button>
             <ul class="dropdown-menu" role="menu">
@@ -447,7 +448,7 @@
       
       <div class="menu-right">
         <div class="btn-group" id="About" data-toggle="tooltip" data-placement="bottom" title="" data-delay="{&quot;show&quot;:&quot;800&quot;, &quot;hide&quot;:&quot;50&quot;}" data-original-title="About">
-          <button data-bind="click: showAbout" class="btn btn-default"><span class="glyphicon glyphicon-question-sign"></span></button>
+          <button aria-label="About Forna" data-bind="click: showAbout" class="btn btn-default"><span class="rc-icon rc-i-question-circle"></span></button>
         </div>
       </div>
     </div>
@@ -458,12 +459,12 @@
           <div class="has-switch" tabindex="0"><div class="switch-animate switch-on"><span class="switch-left">On</span><label>&nbsp;</label><span class="switch-right">Off</span><input type="checkbox" class="bootstrap-switch" data-bind="bootstrapSwitchOn: animation" name="animation-toggle"></div></div>
         </div>
         <div class="btn-group" data-toggle="tooltip" data-placement="top" title="" data-delay="{&quot;show&quot;:&quot;800&quot;, &quot;hide&quot;:&quot;50&quot;}" data-original-title="Center molecules (Key: C)">
-          <button data-bind="click: centerMolecules" class="btn btn-default"><span class="glyphicon glyphicon-screenshot"></span></button>
+          <button aria-label="Center molecules" data-bind="click: centerMolecules" class="btn btn-default"><span class="rc-icon rc-i-crosshair"></span></button>
         </div>
         
         <div class="btn-group dropup">
           <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-            Colors&nbsp;<span class="caret">&nbsp;</span>
+            Colors&nbsp;<span class="rc-icon rc-i-chevron-down" aria-hidden="true"></span>
             <span class="sr-only">Toggle Dropdown</span>
           </button>
           <ul class="dropdown-menu menu-form" role="menu">
@@ -494,8 +495,8 @@
         
         <div class="btn-group dropup">
           <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-            <span class="glyphicon glyphicon-cog">&nbsp;</span>
-            <span class="caret"></span>
+            <span class="rc-icon rc-i-gear" aria-hidden="true"></span>
+            <span class="rc-icon rc-i-chevron-down" aria-hidden="true"></span>
             <span class="sr-only">Toggle Dropdown</span>
           </button>
           <ul class="dropdown-menu menu-form" role="menu">
@@ -553,18 +554,18 @@
           </ul>            
         </div>
         <div class="btn-group" data-toggle="tooltip" data-placement="top" title="" data-delay="{&quot;show&quot;:&quot;800&quot;, &quot;hide&quot;:&quot;50&quot;}" data-original-title="Fullscreen">
-          <button onclick="toggleFullScreen(&#39;main&#39;); return false;" class="btn btn-default"><span class="glyphicon glyphicon-fullscreen"></span></button>
+          <button aria-label="Toggle full screen" onclick="toggleFullScreen(&#39;main&#39;); return false;" class="btn btn-default"><span class="rc-icon rc-i-arrows-fullscreen"></span></button>
         </div>
       </div>
       
       <div class="menu-right">
         <div class="btn-group" data-toggle="tooltip" data-placement="top" title="" data-delay="{&quot;show&quot;:&quot;800&quot;, &quot;hide&quot;:&quot;50&quot;}" data-original-title="Share Link">
-          <button data-bind="click: shareLink" class="btn btn-default"><span class="glyphicon glyphicon-share-alt"></span></button>
+          <button aria-label="Share link" data-bind="click: shareLink" class="btn btn-default"><span class="rc-icon rc-i-share"></span></button>
         </div>
         <div class="btn-group dropup">
             <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                <span class="glyphicon glyphicon-download-alt">&nbsp;</span>
-                <span class="caret"></span>
+                <span class="rc-icon rc-i-download" aria-hidden="true"></span>
+                <span class="rc-icon rc-i-chevron-down" aria-hidden="true"></span>
                 <span class="sr-only">Toggle Dropdown</span>
             </button>
             <ul class="dropdown-menu dropdown-menu-right menu-form" role="menu">

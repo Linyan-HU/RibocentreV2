@@ -85,30 +85,30 @@ DataTable.ext.renderer.pageButton.uikit = function ( settings, host, idx, button
 
 				switch ( button ) {
 					case 'ellipsis':
-						btnDisplay = '<i class="uk-icon-ellipsis-h"></i>';
+						btnDisplay = '<span class="rc-icon rc-i-three-dots" aria-hidden="true"></span>';
 						btnClass = 'uk-disabled disabled';
 						break;
 
 					case 'first':
-						btnDisplay = '<i class="uk-icon-angle-double-left"></i> ' + lang.sFirst;
+						btnDisplay = '<span class="rc-icon rc-i-chevron-double-left" aria-hidden="true"></span> ' + lang.sFirst;
 						btnClass = (page > 0 ?
 							'' : ' uk-disabled disabled');
 						break;
 
 					case 'previous':
-						btnDisplay = '<i class="uk-icon-angle-left"></i> ' + lang.sPrevious;
+						btnDisplay = '<span class="rc-icon rc-i-chevron-left" aria-hidden="true"></span> ' + lang.sPrevious;
 						btnClass = (page > 0 ?
 							'' : 'uk-disabled disabled');
 						break;
 
 					case 'next':
-						btnDisplay = lang.sNext + ' <i class="uk-icon-angle-right"></i>';
+						btnDisplay = lang.sNext + ' <span class="rc-icon rc-i-chevron-right" aria-hidden="true"></span>';
 						btnClass = (page < pages-1 ?
 							'' : 'uk-disabled disabled');
 						break;
 
 					case 'last':
-						btnDisplay = lang.sLast + ' <i class="uk-icon-angle-double-right"></i>';
+						btnDisplay = lang.sLast + ' <span class="rc-icon rc-i-chevron-double-right" aria-hidden="true"></span>';
 						btnClass = (page < pages-1 ?
 							'' : ' uk-disabled disabled');
 						break;

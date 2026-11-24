@@ -61,3 +61,9 @@ kramdown:
   enable_coderay: false
   parse_block_html: true # default for kramdown is false. This will enable using Markdown links
 
+# Keep preview helpers and duplicate drafts outside the published site.
+exclude:
+  - _preview
+  - scripts
+  - PREVIEW.md
+  - "_pages/application - 副本.md"

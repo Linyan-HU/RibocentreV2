@@ -36,17 +36,17 @@ On some pages, we use table-format to show the information of different ribozyme
   <p>Submit</p>
 </blockquote>
 
-<strong>The process of giving us feedback:<strong><br><br>
+<strong>The process of giving us feedback:</strong><br><br>
 <img src="https://www.ribocentre.org/images/HelpsPic/process.png" alt="drawing" style="weight:450px; height:450px;display:block;margin:0 auto;"><br>
 
-<strong>For what:<strong><br>
+<strong>For what:</strong><br>
 
 **You are welcomed to send us feedback and your ideas or suggestions will be greatly valued. We will continue to have our database improved to be fully functional and user-friendly.Your opinions will be fully considered. Click the <code class="language-plaintext highlighter-rouge"><font color=Gray><a href="https://docs.google.com/spreadsheets/d/1dWzCMqP9_fmOxxBxpx6Rc0Ro2Her0YIn-07Rpx7fzEs/edit?usp=sharing"  target="_blank">Submit</a></font></code> button or figures to record your suggestions and comments on Google sheet. We provide more than one entrence you can find to send your feedback.**
 
 <a href="https://docs.google.com/spreadsheets/d/1dWzCMqP9_fmOxxBxpx6Rc0Ro2Her0YIn-07Rpx7fzEs/edit?usp=sharing" target="_blank"><img src="https://www.ribocentre.org/images/help.png" alt="drawing" style="weight:450px;height:200px;display:block;margin:0 auto;"></a><br>
 
  
-<strong>How to :<strong><br>
+<strong>How to :</strong><br>
 
  This is a table of Ribozyme databases. You can comment and have any questions here. Here are some examples for you to submit your work or feedback:<br>
  
@@ -79,13 +79,13 @@ For large datasets please directly contact the database team group member <a hre
 {% assign even_odd = number_printed | modulo: 2 %}
 
 {% if even_odd == 0 %}
-<div class="row">
+<div class="rc-team-row">
 {% endif %}
 
-<div class="col-sm-6 clearfix">
-  <img src="{{ site.url }}{{ site.baseurl }}/images/teampic/{{ member.photo }}" class="img-responsive" width="25%" style="float: left" />
-  <h4>{{ member.name }}</h4>
-  <i>{{ member.info }} <!--<br>email: <{{ member.email }}></i> -->
+<div class="rc-team-card">
+  <img src="{{ site.url }}{{ site.baseurl }}/images/teampic/{{ member.photo }}" class="rc-team-photo" />
+  <div class="rc-team-copy"><h4>{{ member.name }}</h4>
+  <i>{{ member.info }}</i> <!--<br>email: <{{ member.email }}></i> -->
   <ul style="overflow: hidden">
 
   {% if member.number_educ == 1 %}
@@ -120,6 +120,7 @@ For large datasets please directly contact the database team group member <a hre
 
   </ul>
 </div>
+</div>
 
 {% assign number_printed = number_printed | plus: 1 %}
 
@@ -142,12 +143,12 @@ For large datasets please directly contact the database team group member <a hre
 {% assign even_odd = number_printed | modulo: 2 %}
 
 {% if even_odd == 0 %}
-<div class="row">
+<div class="rc-team-row">
 {% endif %}
 
-<div class="col-sm-6 clearfix">
-  <h4>{{ member.name }}</h4>
-  <i>{{ member.info }} <!-- <br>email: <{{ member.email }}></i> -->
+<div class="rc-team-card">
+  <div class="rc-team-copy"><h4>{{ member.name }}</h4>
+  <i>{{ member.info }}</i> <!-- <br>email: <{{ member.email }}></i> -->
   <ul style="overflow: hidden">
 
   {% if member.number_educ == 1 %}
@@ -173,6 +174,7 @@ For large datasets please directly contact the database team group member <a hre
   {% endif %}
 
   </ul>
+</div>
 </div>
 
 {% assign number_printed = number_printed | plus: 1 %}
